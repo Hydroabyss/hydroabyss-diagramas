@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HydroAbyss — Diagramas STCW</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0b3d91 0%, #1a6bb5 50%, #0b3d91 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+      max-width: 700px;
+      width: 100%;
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .logo { font-size: 2.5rem; margin-bottom: 10px; }
+    h1 { color: #0b3d91; font-size: 1.8rem; margin-bottom: 5px; }
+    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 35px; }
+    .diagram-list { list-style: none; padding: 0; }
+    .diagram-list li { margin-bottom: 12px; }
+    .diagram-list a {
+      display: block;
+      padding: 16px 24px;
+      background: #f4f6f9;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #0b3d91;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      border-left: 4px solid #1a6bb5;
+      text-align: left;
+    }
+    .diagram-list a:hover {
+      background: #e8f4fd;
+      transform: translateX(5px);
+      box-shadow: 0 2px 12px rgba(26,107,181,0.15);
+    }
+    .diagram-list .desc {
+      font-weight: 400;
+      font-size: 0.82rem;
+      color: #777;
+      margin-top: 4px;
+    }
+    .footer {
+      margin-top: 35px;
+      color: #aaa;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">⚓</div>
+    <h1>HydroAbyss</h1>
+    <p class="subtitle">Diagramas y Flujogramas — Formación Marítima STCW</p>
+
+    <ul class="diagram-list">
+      <li>
+        <a href="IMO_Convenios_Codigos.html">
+          🏛️ IMO — Convenios y Códigos
+          <div class="desc">Estructura completa de la OMI: convenios (SOLAS, MARPOL, STCW, COLREG), códigos (IMDG, ISM, ISPS) y conceptos clave</div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="footer">
+      HydroAbyss — Generador de Manuales STCW<br>
+      Diagramas publicados con GitHub Pages
+    </div>
+  </div>
+</body>
+</html>
