@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMO — Conventions and Codes | HydroAbyss</title>
+  <link rel="stylesheet" href="../assets/css/hydroabyss-core.css">
+  <link rel="stylesheet" href="../assets/css/diagramas.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-stack">
+    <a href="index.html">← Back to HydroAbyss diagrams</a>
+    <span class="brand">HydroAbyss IMO</span>
+  </div>
+  <div class="lang-switch" aria-label="Language switcher">
+    <a class="lang-link" href="../IMO_Convenios_Codigos.html" lang="es">ES</a>
+    <a class="lang-link is-active" href="IMO_Convenios_Codigos.html" lang="en">EN</a>
+    <a class="lang-link" href="../pt/IMO_Convenios_Codigos.html" lang="pt">PT</a>
+  </div>
+</nav>
+
+<main class="main-container">
+
+<span class="tag-telemetry docs-kicker">Regulatory map</span>
+<h1>International Maritime Organization (IMO)</h1>
+<p class="subtitle">Structure of conventions, codes, and protocols with key concepts for maritime training.</p>
+
+<div class="docs-panel diagram-shell" style="margin-top:24px;">
+<div class="mermaid">
+graph TD
+    IMO["🏛️ <b>IMO</b><br/>International Maritime Organization<br/><i>Established 1948 · Headquarters: London<br/>175 member states</i>"]
+
+    IMO -.->|"Mission: safe navigation,<br/>protection of the marine environment,<br/>competent seafarers"| MISION(["🌍 Safe navigation · Clean seas · Competent seafarers"])
+
+    IMO ==>|"governs"| ASAMBLEA["📋 <b>Assembly</b><br/><i>Supreme body · Meets every 2 years<br/>Approves budget and resolutions</i>"]
+    IMO ==>|"directs"| CONSEJO["🏢 <b>Council</b><br/><i>Executive body · 40 members<br/>Supervises between Assembly sessions</i>"]
+    IMO ==>|"administers"| SECRETARIA["📝 <b>Secretariat</b><br/><i>Coordinates technical work<br/>~300 international officers</i>"]
+
+    CONSEJO ==>|"safety"| MSC["⚓ <b>MSC</b><br/>Maritime Safety<br/>Committee<br/><i>Main technical committee</i>"]
+    CONSEJO ==>|"environment"| MEPC["🌿 <b>MEPC</b><br/>Marine Environment<br/>Protection Committee"]
+    CONSEJO ==>|"maritime law"| LEG["⚖️ <b>Legal Committee</b><br/><i>Liability and<br/>compensation</i>"]
+    CONSEJO -->|"capacity-building for<br/>developing states"| TC["🎓 Technical<br/>Cooperation Committee"]
+    CONSEJO -->|"simplification of<br/>formalities"| FAL["📄 Facilitation<br/>Committee"]
+
+    MSC ==>|"most important<br/>maritime safety convention"| SOLAS["🛡️ <b>SOLAS 1974</b><br/>Safety of Life<br/>at Sea<br/><i>14 chapters · Mandatory</i>"]
+
+    MSC ==>|"maritime professional<br/>competence"| STCW["📚 <b>STCW 1978/2010</b><br/>Training, Certification<br/>and Watchkeeping<br/><i>Manila Amendments 2010</i>"]
+
+    MSC ==>|"rules of the road<br/>at sea"| COLREG["🚦 <b>COLREG 1972</b><br/>International Regulations<br/>for Preventing Collisions<br/><i>38 Rules + 4 Annexes</i>"]
+
+    MSC -->|"search and rescue<br/>coordination"| SAR["🆘 <b>SAR 1979</b><br/>Search and<br/>Rescue<br/><i>Global SAR plan</i>"]
+
+    MSC -->|"protection against<br/>unlawful acts"| ISPS["🔒 <b>ISPS Code</b><br/>Ship and Port Facility<br/>Security<br/><i>Post-9/11 · Mandatory 2004</i>"]
+
+    MEPC ==>|"most complete<br/>environmental convention"| MARPOL["🌊 <b>MARPOL 73/78</b><br/>Prevention of Pollution<br/>from Ships<br/><i>6 technical annexes</i>"]
+
+    MEPC -->|"invasive species through<br/>ballast water"| BWM["🦠 <b>BWM 2004</b><br/>Ballast Water<br/>Management<br/><i>In force since 2017</i>"]
+
+    MEPC -->|"toxic antifouling<br/>paints"| AFS["🎨 <b>AFS 2001</b><br/>Anti-Fouling<br/>Systems<br/><i>Bans TBT</i>"]
+
+    LEG -->|"who pays for<br/>oil spill damage?"| CLC["💰 <b>CLC 1969/92</b><br/>Civil Liability for Oil<br/>Pollution Damage<br/><i>Strict shipowner liability</i>"]
+
+    LEG -->|"supplementary fund when<br/>CLC is not enough"| FUND["🏦 <b>FUND 1992</b><br/>International Compensation<br/>Fund<br/><i>Financed by oil receivers</i>"]
+
+    LEG -->|"maximum compensation<br/>limit"| LLMC["📏 <b>LLMC 1976/96</b><br/>Limitation of<br/>Liability<br/><i>Based on vessel GT</i>"]
+
+    SOLAS ==>|"structure"| SOLAS_CAP["<b>14 SOLAS Chapters</b>"]
+    SOLAS_CAP -->|"structure and<br/>stability"| CAP_II["<b>Ch. II-1/II-2</b><br/>Construction · Subdivision<br/>Stability · Fire protection"]
+    SOLAS_CAP -->|"boats, rafts,<br/>lifejackets"| CAP_III["<b>Ch. III</b><br/>Life-Saving<br/>Appliances"]
+    SOLAS_CAP -->|"GMDSS"| CAP_IV["<b>Ch. IV</b><br/>Radiocommunications<br/><i>GMDSS mandatory</i>"]
+    SOLAS_CAP -->|"charts, AIS,<br/>VDR, ECDIS"| CAP_V["<b>Ch. V</b><br/>Safety of<br/>Navigation"]
+    SOLAS_CAP -->|"safety management"| CAP_IX["<b>Ch. IX</b><br/>ISM Code<br/><i>SMS mandatory</i>"]
+    SOLAS_CAP -->|"security measures<br/>after 9/11"| CAP_XI["<b>Ch. XI-2</b><br/>Special maritime<br/>security measures"]
+
+    CAP_IX -.-|"implements"| ISPS
+    CAP_III -.-|"detailed by"| LSA
+    CAP_V -.-|"requires competence under"| STCW
+
+    MARPOL ==>|"6 technical<br/>annexes"| ANEXOS_M["<b>MARPOL Annexes</b>"]
+    ANEXOS_M -->|"crude oil and products<br/>SOPEP · Oil record book"| ANX_I["<b>Annex I</b><br/>Oil<br/><i>Special areas:<br/>Mediterranean, Baltic...</i>"]
+    ANEXOS_M -->|"noxious liquid chemicals<br/>Categories X,Y,Z,OS"| ANX_II["<b>Annex II</b><br/>Noxious Liquid<br/>Substances in Bulk"]
+    ANEXOS_M -->|"packaging,<br/>marking, labelling"| ANX_III["<b>Annex III</b><br/>Harmful Substances<br/>in Packaged Form"]
+    ANEXOS_M -->|"treatment of<br/>sewage"| ANX_IV["<b>Annex IV</b><br/>Sewage"]
+    ANEXOS_M -->|"integrated garbage<br/>management on board"| ANX_V["<b>Annex V</b><br/>Garbage<br/><i>General discharge<br/>prohibition</i>"]
+    ANEXOS_M -->|"SOx, NOx, CO2<br/>ECA · EEDI · CII"| ANX_VI["<b>Annex VI</b><br/>Air Pollution<br/><i>0.50% sulfur cap<br/>since 2020</i>"]
+
+    STCW ==>|"mandatory and<br/>recommended parts"| STCW_COD["<b>STCW Code</b>"]
+    STCW_COD -->|"minimum competence<br/>requirements"| PARTE_A["<b>Part A</b><br/><i>Mandatory standards<br/>Competence tables<br/>by function and level</i>"]
+    STCW_COD -->|"implementation<br/>guidance"| PARTE_B["<b>Part B</b><br/><i>Recommended guidance<br/>Assessment criteria</i>"]
+    STCW_COD -->|"standardized training<br/>material"| CURSOS_M["<b>IMO Model Courses</b><br/>1.19 FBSM · 1.20 FSEI<br/>1.21 PSM · 1.29 BP<br/>2.03 ISPS · 7.04 OR"]
+
+    PARTE_A -->|"defines 7 functions"| FUNCIONES["<b>STCW Functions</b><br/>1. Navigation<br/>2. Cargo handling<br/>3. Ship control<br/>4. Marine engineering/electrical<br/>5. Maintenance and repair<br/>6. Radiocommunications<br/>7. Security"]
+
+    MSC ==>|"mandatory technical<br/>codes"| OTROS["<b>Associated Codes</b>"]
+    OTROS -->|"9 classes of<br/>dangerous goods"| IMDG["☢️ <b>IMDG Code</b><br/>Dangerous Goods<br/><i>Classification · Packaging<br/>Stowage · Segregation</i>"]
+    OTROS -->|"LNG, LPG<br/>and liquefied gases"| IGC["❄️ <b>IGC Code</b><br/>Gas Carriers<br/><i>Tank types<br/>1, 2, 3, membrane</i>"]
+    OTROS -->|"bulk chemical<br/>products"| IBC["🧪 <b>IBC Code</b><br/>Bulk Chemicals<br/><i>Product list and<br/>requirements</i>"]
+    OTROS -->|"navigation in the<br/>Arctic and Antarctic"| POLAR["🧊 <b>Polar Code</b><br/>Polar Waters<br/><i>In force 2017<br/>Categories A, B, C</i>"]
+    OTROS -->|"specifications for<br/>life-saving equipment"| LSA["🛟 <b>LSA Code</b><br/>Life-Saving<br/>Appliances"]
+    OTROS -->|"fire detection and<br/>extinguishing"| FSS["🔥 <b>FSS Code</b><br/>Fire Safety<br/>Systems"]
+
+    IMDG -.-|"complements"| ANX_III
+    COLREG -.-|"competent navigator<br/>under STCW"| STCW
+    MARPOL -.-|"safe ship under"| SOLAS
+
+    classDef imo fill:#061525,stroke:#00d4ff,color:#fff,font-size:14px
+    classDef comite fill:#0a1e30,stroke:#357df9,color:#fff
+    classDef convenio fill:#081a2d,stroke:#00d4ff,color:#e8f4f8,font-size:12px
+    classDef codigo fill:#1d1808,stroke:#ffcd35,color:#fff2bf,font-size:11px
+    classDef anexo fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:11px
+    classDef organo fill:#0a1e30,stroke:#7acbff,color:#e8f4f8
+    classDef mision fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:12px
+    classDef funcion fill:#1b1019,stroke:#fc5185,color:#ffe6ee,font-size:11px
+
+    class IMO imo
+    class MSC,MEPC,LEG,TC,FAL comite
+    class ASAMBLEA,CONSEJO,SECRETARIA organo
+    class SOLAS,STCW,COLREG,SAR,ISPS,MARPOL,BWM,AFS,CLC,FUND,LLMC convenio
+    class IMDG,IGC,IBC,POLAR,LSA,FSS,CAP_II,CAP_III,CAP_IV,CAP_V,CAP_IX,CAP_XI codigo
+    class ANX_I,ANX_II,ANX_III,ANX_IV,ANX_V,ANX_VI anexo
+    class PARTE_A,PARTE_B,CURSOS_M codigo
+    class SOLAS_CAP,ANEXOS_M,STCW_COD,OTROS convenio
+    class MISION mision
+    class FUNCIONES funcion
+</div>
+</div>
+
+<h2 class="section-title">Key IMO concepts and its main conventions</h2>
+
+<div class="conceptos">
+
+  <div class="concepto-card card-imo">
+    <h3>🏛️ IMO — International Maritime Organization</h3>
+    <p>UN specialized agency responsible for the safety and security of shipping and the prevention of marine pollution from ships.</p>
+    <ul>
+      <li><b>Foundation:</b> Convention adopted in 1948, in force since 1958</li>
+      <li><b>Headquarters:</b> London, United Kingdom</li>
+      <li><b>Members:</b> 175 states + 3 associate members</li>
+      <li><b>Guiding principle:</b> “Safe navigation, clean seas, competent seafarers”</li>
+      <li><b>Instruments:</b> Conventions, codes, guidelines, and binding resolutions</li>
+      <li><b>Amendments:</b> Tacit acceptance procedure</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-solas">
+    <h3>🛡️ SOLAS — Safety of Life at Sea</h3>
+    <p>The most important international maritime safety treaty. Its origin dates back to the sinking of the <i>Titanic</i> (1912). Current version: 1974 with the 1988 Protocol and continuing amendments.</p>
+    <ul>
+      <li><b>Objective:</b> Minimum standards for construction, equipment, and ship operation</li>
+      <li><b>Scope:</b> Ships on international voyages</li>
+      <li><b>Structure:</b> 14 chapters</li>
+      <li><b>Certificates:</b> Passenger Ship Safety, Construction, Equipment, and Radio</li>
+      <li><b>Control:</b> Port State Control (PSC)</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-marpol">
+    <h3>🌊 MARPOL 73/78 — Pollution Prevention</h3>
+    <p>The main convention for preventing pollution of the marine environment caused by ships.</p>
+    <ul>
+      <li><b>6 Annexes:</b> Oil (I), Noxious liquid chemicals (II), Packaged harmful substances (III), Sewage (IV), Garbage (V), Emissions (VI)</li>
+      <li><b>Special areas:</b> Mediterranean, Baltic, North Sea, Caribbean, Red Sea</li>
+      <li><b>ECA:</b> Emission Control Areas with strict SOx and NOx limits</li>
+      <li><b>2020 milestone:</b> Global sulfur limit reduced to 0.50%</li>
+      <li><b>Decarbonization:</b> IMO strategy to reduce GHG emissions from shipping</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-stcw">
+    <h3>📚 STCW — Training, Certification and Watchkeeping</h3>
+    <p>International minimum training standards for seafarers. Legal basis for HydroAbyss training content.</p>
+    <ul>
+      <li><b>Origin:</b> 1978, revised in 1995, Manila Amendments 2010</li>
+      <li><b>Code:</b> Part A (mandatory) + Part B (recommended)</li>
+      <li><b>7 Functions:</b> Navigation, Cargo, Control, Engineering, Maintenance, Radio, Security</li>
+      <li><b>3 Levels:</b> Support, Operational, Management</li>
+      <li><b>Model Courses:</b> 1.19 FBSM, 1.20 FSEI, 1.21 PSM, 1.29 BP</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-colreg">
+    <h3>🚦 COLREG — Collision Prevention Regulations</h3>
+    <p>The “rules of the road at sea”. They regulate navigation conduct, lights, shapes, and sound signals.</p>
+    <ul>
+      <li><b>Structure:</b> 38 Rules in 5 Parts + 4 Annexes</li>
+      <li><b>Part B:</b> Steering and sailing rules</li>
+      <li><b>Part C:</b> Lights and shapes</li>
+      <li><b>Part D:</b> Sound and light signals</li>
+      <li><b>Rule 5:</b> Proper lookout — one of the most cited rules in casualty investigations</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-sar">
+    <h3>🆘 SAR — Search and Rescue</h3>
+    <p>International search and rescue plan dividing oceans into SAR regions with MRCC coordination centers.</p>
+    <ul>
+      <li><b>Complement:</b> IAMSAR Manual (3 volumes)</li>
+      <li><b>SRR:</b> Regions assigned to each coastal state</li>
+      <li><b>SOLAS:</b> Chapter V requires assistance to persons in distress</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-isps">
+    <h3>🔒 ISPS — Ship and Port Facility Security</h3>
+    <p>Post-9/11 code to protect maritime transport against unlawful acts.</p>
+    <ul>
+      <li><b>Implementation:</b> SOLAS Chapter XI-2, mandatory since July 2004</li>
+      <li><b>3 Levels:</b> Normal (1), Heightened (2), Exceptional (3)</li>
+      <li><b>Roles:</b> PFSO, SSO, CSO</li>
+      <li><b>Plan:</b> Each ship and facility must have an approved plan</li>
+    </ul>
+  </div>
+
+  <div class="concepto-card card-imdg">
+    <h3>☢️ IMDG — Dangerous Goods Code</h3>
+    <p>It regulates the safe carriage of dangerous goods by sea through nine hazard classes.</p>
+    <ul>
+      <li><b>9 Classes:</b> Explosives, gases, flammable liquids, flammable solids, oxidizers, toxics, radioactive, corrosives, miscellaneous</li>
+      <li><b>Content:</b> Classification, packaging, marking, labelling, stowage, and segregation</li>
+      <li><b>Mandatory:</b> Since 2004</li>
+      <li><b>Updates:</b> Every 2 years</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">
+  <a href="https://hydroabyss.com" target="_blank">HydroAbyss</a> — STCW manuals generator · March 2026
+</div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#081a2d',
+      primaryBorderColor: '#00d4ff',
+      primaryTextColor: '#e8f4f8',
+      secondaryColor: '#0a1e30',
+      tertiaryColor: '#061525',
+      lineColor: '#00d4ff',
+      fontSize: '12px',
+      fontFamily: 'Inter, sans-serif'
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 25,
+      rankSpacing: 55,
+      useMaxWidth: true
+    }
+  });
+</script>
+</body>
+</html>

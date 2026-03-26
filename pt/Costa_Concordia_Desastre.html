@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costa Concordia — Estudo de Caso Técnico | HydroAbyss</title>
+  <link rel="stylesheet" href="../assets/css/hydroabyss-core.css">
+  <link rel="stylesheet" href="../assets/css/diagramas.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-stack">
+    <a href="index.html">← Voltar aos diagramas HydroAbyss</a>
+    <span class="brand">HydroAbyss Cases</span>
+    <a href="https://hydroabyss.com" target="_blank">hydroabyss.com</a>
+  </div>
+  <div class="lang-switch" aria-label="Seletor de idioma">
+    <a class="lang-link" href="../Costa_Concordia_Desastre.html" lang="es">ES</a>
+    <a class="lang-link" href="../en/Costa_Concordia_Desastre.html" lang="en">EN</a>
+    <a class="lang-link is-active" href="Costa_Concordia_Desastre.html" lang="pt">PT</a>
+  </div>
+</nav>
+
+<div class="main-container main-container-case">
+
+<section class="concordia-hero">
+  <span class="tag-telemetry">Estudo de caso técnico</span>
+  <h1 class="title-display docs-title-wide">Costa Concordia</h1>
+  <p class="subtitle body-copy">Quebra operacional, falhas de comando, violações normativas e lições técnicas de um dos sinistros de navios de passageiros mais relevantes da era moderna.</p>
+  <p class="datos-buque">
+    13 de janeiro de 2012 · Isola del Giglio, Itália · 114.500 GT · 290,2 m de comprimento · 35,5 m de boca · 4.229 pessoas a bordo · <b style="color:var(--danger)">32 mortos</b><br>
+    Capitão: Francesco Schettino · Operador: Costa Crociere (Carnival Corporation) · Construído pela Fincantieri, Sestri Ponente (2004)<br>
+    <span style="color:var(--warning);">VDR fora de serviço durante 15 dias antes do sinistro · última gravação válida às 23:36</span>
+  </p>
+  <div class="concordia-action-row">
+    <a class="btn-sharp btn-primary" href="casos/costa-concordia/">Abrir gêmeo digital</a>
+    <a class="btn-sharp btn-secondary-sharp" href="index.html">Ver hub de diagramas</a>
+  </div>
+  <div class="docs-note-grid concordia-note-grid">
+    <article class="docs-note-card">
+      <h3>Escopo</h3>
+      <p>Esta versão em português resume a cadeia causal, as decisões de ponte, o atraso na evacuação e as consequências normativas.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Uso</h3>
+      <p>Adequado para briefings de formação, reciclagens de oficiais, reuniões de segurança e discussão estruturada sobre BRM e gestão de crise.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Recurso associado</h3>
+      <p>O gêmeo digital transforma esta leitura documental em checkpoints, escolhas e debriefs para formação aplicada.</p>
+    </article>
+  </div>
+</section>
+
+<h2 class="section-title">Cadeia causal</h2>
+
+<div class="docs-panel diagram-shell">
+<div class="mermaid">
+flowchart TD
+    A[Derrota aprovada] --> B[Desvio deliberado inchino]
+    B --> C[Aproximação costeira insegura a 15,5 kn]
+    C --> D[Manobra tardia perto de Le Scole]
+    D --> E[Brecha no casco e blackout]
+    E --> F[Reconhecimento tardio da emergência]
+    F --> G[Ordem tardia de abandono]
+    G --> H[Banda severa e botes inutilizáveis]
+    H --> I[Evacuação caótica e vítimas]
+</div>
+</div>
+
+<h2 class="section-title">Timeline condensada</h2>
+
+<div class="timeline">
+  <div class="event">
+    <span class="time">21:18</span>
+    <div class="dot dot-warning"></div>
+    <div class="content border-warning">
+      <h4>Desvio de rota não autorizado</h4>
+      <p>O navio sai da derrota aprovada para realizar um inchino próximo de Isola del Giglio.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">21:42</span>
+    <div class="dot dot-fatal"></div>
+    <div class="content border-fatal">
+      <h4>Impacto em Le Scole</h4>
+      <p>O costado de bombordo atinge a rocha, abrindo uma brecha maior e iniciando inundação progressiva.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">21:43</span>
+    <div class="dot dot-critical"></div>
+    <div class="content border-critical">
+      <h4>Blackout e perda de propulsão</h4>
+      <p>A geração elétrica e a propulsão ficam comprometidas enquanto a estanqueidade já está a falhar.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">22:12</span>
+    <div class="dot dot-critical"></div>
+    <div class="content border-critical">
+      <h4>Comunicação falsa às autoridades</h4>
+      <p>A emergência é minimizada como simples blackout enquanto os passageiros já estão a telefonar para terra.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">22:54</span>
+    <div class="dot dot-fatal"></div>
+    <div class="content border-fatal">
+      <h4>Abandono do navio ordenado demasiado tarde</h4>
+      <p>A evacuação começa com banda severa, disponibilidade parcial dos meios e controlo de multidões degradado.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">00:30</span>
+    <div class="dot dot-error"></div>
+    <div class="content border-error">
+      <h4>O capitão deixa o navio</h4>
+      <p>A continuidade do comando é quebrada enquanto ainda há pessoas a bordo e a coordenação externa se intensifica.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Leitura normativa</h2>
+
+<div class="violations-grid">
+  <div class="v-card vc-solas">
+    <h3>SOLAS</h3>
+    <ul>
+      <li>O planeamento da viagem e a disciplina de navegação foram comprometidos antes do próprio sinistro.</li>
+      <li>O sinal geral de emergência e a ordem de abandono foram retardados para além de qualquer margem útil.</li>
+      <li>A estabilidade após avaria e a operabilidade real dos meios de salvamento tornaram-se pontos centrais de falha.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-colreg">
+    <h3>COLREG</h3>
+    <ul>
+      <li>Velocidade de segurança, vigilância e manobra eficaz deixaram de ser sustentadas durante a aproximação costeira.</li>
+      <li>A sequência de colisão reflete uma quebra de marinharia básica, não um único erro isolado.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-ism">
+    <h3>ISM</h3>
+    <ul>
+      <li>O sistema de gestão da segurança não impediu nem travou uma prática conhecida como insegura.</li>
+      <li>A resposta de emergência a bordo e em terra não foi ativada com a urgência exigida pelo perfil do sinistro.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-stcw">
+    <h3>STCW</h3>
+    <ul>
+      <li>Bridge resource management, liderança em crise e controlo de passageiros foram fragilidades centrais.</li>
+      <li>O caso continua a ser referência para formação em autoridade de comando e comunicação de emergência.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-marpol">
+    <h3>MARPOL</h3>
+    <ul>
+      <li>O sinistro gerou de imediato um problema de controlo de poluição devido ao combustível pesado a bordo.</li>
+      <li>A recuperação pós-sinistro demonstrou a escala do risco ambiental associado a danos em navios de passageiros.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-tecnico">
+    <h3>Implicações técnicas</h3>
+    <ul>
+      <li>A magnitude da brecha no casco excedeu os pressupostos ordinários de sobrevivência.</li>
+      <li>A falha do VDR e as questões nas portas estanques reduziram resiliência e clareza investigativa.</li>
+      <li>A banda crescente degradou a geometria de evacuação mais depressa do que o comando conseguiu adaptar-se.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section-title">Lições operacionais</h2>
+
+<div class="ops-grid">
+  <div class="ops-card">
+    <h3>A disciplina de derrota é uma barreira primária</h3>
+    <p>O sinistro começou com um desvio discricionário, não com o choque na rocha. O planeamento da viagem continua a ser uma salvaguarda operacional e legal.</p>
+  </div>
+  <div class="ops-card">
+    <h3>A comunicação de emergência faz parte do controlo do navio</h3>
+    <p>Minimizar o dano atrasou a mobilização plena do apoio externo e degradou, ao mesmo tempo, a tomada de decisão a bordo.</p>
+  </div>
+  <div class="ops-card">
+    <h3>Evacuação tardia cria desvantagem estrutural</h3>
+    <p>Quando a banda se torna severa, nenhuma autoridade verbal consegue restaurar a geometria original para um abandono ordenado.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://hydroabyss.com" target="_blank">HydroAbyss</a> — Documentação de formação marítima · Março de 2026<br>
+  Síntese editorial preparada pela HydroAbyss com base em material técnico e normativo de referência.
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#081a2d',
+      primaryBorderColor: '#00d4ff',
+      primaryTextColor: '#e8f4f8',
+      secondaryColor: '#0a1e30',
+      tertiaryColor: '#061525',
+      lineColor: '#00d4ff',
+      fontSize: '12px',
+      fontFamily: 'Inter, sans-serif'
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 25,
+      rankSpacing: 55,
+      useMaxWidth: true
+    }
+  });
+</script>
+</body>
+</html>

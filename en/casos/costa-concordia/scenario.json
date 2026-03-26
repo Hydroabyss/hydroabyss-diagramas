@@ -1,0 +1,292 @@
+{
+  "scenario": "Costa Concordia",
+  "version": "v1.1",
+  "status": "interactive",
+  "summary": "Training simulation on critical decisions during the Costa Concordia casualty.",
+  "checkpoints": [
+    {
+      "id": "cp1",
+      "time": "21:18",
+      "phase": "Route",
+      "title": "Unauthorized deviation detected",
+      "summary": "The inchino toward Isola del Giglio is ordered outside the approved route and with unvalidated references.",
+      "systemState": [
+        { "label": "Navigation", "value": "Off-plan", "status": "warning" },
+        { "label": "Bridge", "value": "Degraded judgment", "status": "warning" },
+        { "label": "Legal risk", "value": "Escalating", "status": "critical" },
+        { "label": "Reaction time", "value": "Available", "status": "ok" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "warning",
+          "title": "Route deviation",
+          "detail": "The actual track no longer matches the approved voyage plan."
+        },
+        {
+          "level": "critical",
+          "title": "Insufficient BRM control",
+          "detail": "No one on the bridge is stopping a clearly unsafe decision."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS V/34",
+          "title": "Voyage planning",
+          "detail": "The track must be planned, documented, and followed."
+        },
+        {
+          "code": "ISM 7",
+          "title": "Shipboard operations",
+          "detail": "The company must ensure navigation and control procedures."
+        }
+      ],
+      "decision": {
+        "prompt": "What operational order would have reduced risk at this point?",
+        "recommended": "abort",
+        "options": [
+          {
+            "id": "continue",
+            "label": "Continue the inchino",
+            "outcome": "An unapproved maneuver is maintained with ever-smaller margins.",
+            "score": "poor"
+          },
+          {
+            "id": "abort",
+            "label": "Abort and return to the planned route",
+            "outcome": "Navigation control is restored before entering the risk zone.",
+            "score": "best"
+          },
+          {
+            "id": "slow",
+            "label": "Reduce speed but keep the approach",
+            "outcome": "It reduces part of the risk, but the unauthorized deviation remains.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "The failure begins before the impact",
+        "summary": "The casualty does not start with the collision, but with an out-of-procedure route decision that nobody corrects.",
+        "lessons": [
+          "The voyage plan is not decorative; it is a technical and legal barrier.",
+          "BRM must allow officers to challenge the captain when safety is falling.",
+          "Reducing speed helps, but it does not correct an unauthorized maneuver."
+        ],
+        "diagram": "flowchart LR\n  A[Approved route] --> B{Captain's decision}\n  B -->|Abort inchino| C[Return to safe route]\n  B -->|Keep deviation| D[Accumulated risk]\n  D --> E[Insufficient maneuver margin]"
+      }
+    },
+    {
+      "id": "cp2",
+      "time": "21:42",
+      "phase": "Impact",
+      "title": "Impact and loss of propulsion",
+      "summary": "The hull strikes Le Scole, a major breach opens, and propulsion power is lost.",
+      "systemState": [
+        { "label": "Hull", "value": "Major breach", "status": "critical" },
+        { "label": "Propulsion", "value": "Out of service", "status": "critical" },
+        { "label": "Power", "value": "Blackout", "status": "critical" },
+        { "label": "Reaction time", "value": "Very limited", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "Loss of structural integrity",
+          "detail": "The extent of damage exceeds the ordinary operating scenario."
+        },
+        {
+          "level": "critical",
+          "title": "Progressive flooding risk",
+          "detail": "Loss of watertight integrity compromises stability and essential systems."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS II-1",
+          "title": "Damage stability",
+          "detail": "The ship must maintain survivability and effective subdivision."
+        },
+        {
+          "code": "MARPOL I",
+          "title": "Pollution risk",
+          "detail": "The casualty creates an immediate fuel leakage scenario."
+        }
+      ],
+      "decision": {
+        "prompt": "After the impact, what is the correct first critical decision?",
+        "recommended": "alarm",
+        "options": [
+          {
+            "id": "blackout-cover",
+            "label": "Report only an electrical failure",
+            "outcome": "Crew and passengers lose critical time without understanding the real gravity.",
+            "score": "poor"
+          },
+          {
+            "id": "alarm",
+            "label": "Activate emergency and assess real damage",
+            "outcome": "Operational time is gained for control, compartmentalization, and evacuation preparation.",
+            "score": "best"
+          },
+          {
+            "id": "wait",
+            "label": "Wait for full confirmation before alarming",
+            "outcome": "It looks prudent, but it degrades the response window.",
+            "score": "poor"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "Lost time becomes unrecoverable",
+        "summary": "When the system is already physically degraded, hiding the severity accelerates operational collapse.",
+        "lessons": [
+          "A blackout after impact is not a minor issue; it must be treated as an emergency until major damage is ruled out.",
+          "An early emergency signal organizes resources; it does not create panic by itself.",
+          "Useful response time is measured in minutes, not intuition."
+        ],
+        "diagram": "flowchart LR\n  A[Impact 21:42] --> B{Initial response}\n  B -->|Immediate emergency| C[Diagnosis and control]\n  B -->|Minimize damage| D[Operational delay]\n  D --> E[More difficult evacuation]"
+      }
+    },
+    {
+      "id": "cp3",
+      "time": "22:12",
+      "phase": "Communication",
+      "title": "Coast Guard requests the real situation",
+      "summary": "Livorno contacts the ship while passengers are already raising the alarm on their own.",
+      "systemState": [
+        { "label": "Communications", "value": "Inconsistent", "status": "critical" },
+        { "label": "External authority", "value": "Intervening", "status": "warning" },
+        { "label": "Passengers", "value": "Without clear instructions", "status": "critical" },
+        { "label": "Evacuation", "value": "Not yet prepared", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "False operational narrative",
+          "detail": "The blackout version contradicts passenger calls and the ship's physical reality."
+        },
+        {
+          "level": "warning",
+          "title": "Degraded SAR coordination",
+          "detail": "Without truthful information, external assets cannot escalate in time."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SAR 1979",
+          "title": "Emergency communication",
+          "detail": "The emergency must be reported quickly and without falsifying the situation."
+        },
+        {
+          "code": "SOLAS V/33",
+          "title": "Danger reporting",
+          "detail": "Maritime authorities must receive reliable operational information."
+        }
+      ],
+      "decision": {
+        "prompt": "What communication was correct at this point?",
+        "recommended": "declare",
+        "options": [
+          {
+            "id": "declare",
+            "label": "Declare flooding and loss of control",
+            "outcome": "It allows SAR to coordinate real support and accelerates evacuation preparation.",
+            "score": "best"
+          },
+          {
+            "id": "minimize",
+            "label": "Maintain the blackout version",
+            "outcome": "External assistance is delayed and bridge authority erodes.",
+            "score": "poor"
+          },
+          {
+            "id": "partial",
+            "label": "Report only moderate list",
+            "outcome": "It improves coordination somewhat, but still hides the critical severity of the damage.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "Communication is also a safety maneuver",
+        "summary": "Lying or minimizing during a maritime emergency destroys coordination capacity and increases final damage.",
+        "lessons": [
+          "SAR needs operational truth, not reputational protection.",
+          "If passengers are reporting better than the bridge, command is already degraded.",
+          "External coordination must start before the chaotic phase, not after."
+        ],
+        "diagram": "flowchart LR\n  A[SAR requests status] --> B{Message sent}\n  B -->|Real status| C[Early coordination]\n  B -->|Blackout| D[SAR delay]\n  D --> E[Evacuation without sufficient support]"
+      }
+    },
+    {
+      "id": "cp4",
+      "time": "22:54",
+      "phase": "Evacuation",
+      "title": "Abandon ship with a 1h 12m delay",
+      "summary": "The order comes with severe list, port-side boats unusable, and passengers already disorganized.",
+      "systemState": [
+        { "label": "List", "value": "Extreme", "status": "critical" },
+        { "label": "Boats", "value": "Partially operational", "status": "critical" },
+        { "label": "Passengers", "value": "Under high stress", "status": "critical" },
+        { "label": "Crew", "value": "Insufficient control", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "Late evacuation",
+          "detail": "The ship's angle already invalidates part of the abandonment equipment."
+        },
+        {
+          "level": "critical",
+          "title": "Insufficient training",
+          "detail": "Without drill or clear orders, the flow of people becomes chaotic."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS III/21",
+          "title": "Operation of life-saving appliances",
+          "detail": "Boat operations require time, control, and still-recoverable conditions."
+        },
+        {
+          "code": "STCW A-V/2",
+          "title": "Crisis management",
+          "detail": "Passenger vessel personnel must be able to control and guide passengers."
+        }
+      ],
+      "decision": {
+        "prompt": "Which decision would have produced a better result before reaching this point?",
+        "recommended": "earlier",
+        "options": [
+          {
+            "id": "earlier",
+            "label": "Order preparation and abandonment much earlier",
+            "outcome": "Life-saving appliances would have operated with more margin and less list.",
+            "score": "best"
+          },
+          {
+            "id": "same",
+            "label": "Wait until the moment it was actually ordered",
+            "outcome": "The evacuation starts already degraded and with partial capability.",
+            "score": "poor"
+          },
+          {
+            "id": "internal",
+            "label": "Prepare only the crew without informing passengers",
+            "outcome": "It reduces some internal chaos, but does not correct the decisive delay.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "A late evacuation is not fixed with stronger orders",
+        "summary": "The greatest damage at this stage had already been planted by the prior delay in recognizing the emergency and organizing the response.",
+        "lessons": [
+          "Abandon-ship preparation must start before the vessel loses operational geometry.",
+          "The absence of a drill worsens any real evacuation.",
+          "Time is not recovered with more verbal authority once physics has already won."
+        ],
+        "diagram": "flowchart LR\n  A[Severe damage] --> B{Abandon ship order}\n  B -->|Early| C[Usable appliances]\n  B -->|Late| D[Extreme list]\n  D --> E[Chaos and reduced capacity]"
+      }
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+{
+  "scenario": "Costa Concordia",
+  "version": "v1.1",
+  "status": "interactive",
+  "summary": "Simulação formativa sobre decisões críticas no acidente do Costa Concordia.",
+  "checkpoints": [
+    {
+      "id": "cp1",
+      "time": "21:18",
+      "phase": "Rota",
+      "title": "Desvio não autorizado detectado",
+      "summary": "O inchino em direção a Isola del Giglio é ordenado fora da rota aprovada e com referências não validadas.",
+      "systemState": [
+        { "label": "Navegação", "value": "Fora do plano", "status": "warning" },
+        { "label": "Ponte", "value": "Critério degradado", "status": "warning" },
+        { "label": "Risco legal", "value": "Escalando", "status": "critical" },
+        { "label": "Tempo de reação", "value": "Disponível", "status": "ok" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "warning",
+          "title": "Desvio de derrota",
+          "detail": "A derrota real já não coincide com o plano de viagem aprovado."
+        },
+        {
+          "level": "critical",
+          "title": "Controlo BRM insuficiente",
+          "detail": "Ninguém na ponte está a travar uma decisão claramente insegura."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS V/34",
+          "title": "Planeamento da viagem",
+          "detail": "A derrota deve ser planeada, documentada e seguida."
+        },
+        {
+          "code": "ISM 7",
+          "title": "Operações a bordo",
+          "detail": "A companhia deve assegurar procedimentos de navegação e controlo."
+        }
+      ],
+      "decision": {
+        "prompt": "Que ordem operacional teria reduzido o risco neste ponto?",
+        "recommended": "abort",
+        "options": [
+          {
+            "id": "continue",
+            "label": "Continuar o inchino",
+            "outcome": "Mantém-se uma manobra não aprovada com margem cada vez menor.",
+            "score": "poor"
+          },
+          {
+            "id": "abort",
+            "label": "Abortar e regressar à derrota planeada",
+            "outcome": "O controlo da navegação é restabelecido antes de entrar na zona de risco.",
+            "score": "best"
+          },
+          {
+            "id": "slow",
+            "label": "Reduzir a velocidade mas manter a aproximação",
+            "outcome": "Reduz parte do risco, mas continua a existir um desvio não autorizado.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "A falha começa antes do impacto",
+        "summary": "O acidente não começa com a colisão, mas com uma decisão de derrota fora do procedimento que ninguém corrige.",
+        "lessons": [
+          "O plano de viagem não é decorativo; é uma barreira técnica e legal.",
+          "O BRM deve permitir questionar decisões do capitão quando a segurança cai.",
+          "Reduzir velocidade ajuda, mas não corrige uma manobra não autorizada."
+        ],
+        "diagram": "flowchart LR\n  A[Derrota aprovada] --> B{Decisão do capitão}\n  B -->|Abortar inchino| C[Regresso à rota segura]\n  B -->|Manter desvio| D[Risco acumulado]\n  D --> E[Margem de manobra insuficiente]"
+      }
+    },
+    {
+      "id": "cp2",
+      "time": "21:42",
+      "phase": "Impacto",
+      "title": "Impacto e perda de propulsão",
+      "summary": "O casco atinge Le Scole, abre-se uma brecha de grande magnitude e perde-se energia de propulsão.",
+      "systemState": [
+        { "label": "Casco", "value": "Brecha maior", "status": "critical" },
+        { "label": "Propulsão", "value": "Fora de serviço", "status": "critical" },
+        { "label": "Energia", "value": "Blackout", "status": "critical" },
+        { "label": "Tempo de reação", "value": "Muito limitado", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "Perda de integridade estrutural",
+          "detail": "A magnitude do dano supera o cenário operacional ordinário."
+        },
+        {
+          "level": "critical",
+          "title": "Risco de inundação progressiva",
+          "detail": "A perda de estanqueidade compromete estabilidade e sistemas essenciais."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS II-1",
+          "title": "Estabilidade após avaria",
+          "detail": "O navio deve manter capacidade de sobrevivência e compartimentação efetiva."
+        },
+        {
+          "code": "MARPOL I",
+          "title": "Risco de poluição",
+          "detail": "A avaria abre um cenário imediato de fuga de combustível."
+        }
+      ],
+      "decision": {
+        "prompt": "Após o impacto, qual é a primeira decisão crítica correta?",
+        "recommended": "alarm",
+        "options": [
+          {
+            "id": "blackout-cover",
+            "label": "Comunicar apenas uma falha elétrica",
+            "outcome": "Tripulação e passageiros perdem tempo crítico sem saber a gravidade real.",
+            "score": "poor"
+          },
+          {
+            "id": "alarm",
+            "label": "Ativar emergência e avaliar o dano real",
+            "outcome": "Ganha-se tempo operacional para controlo, compartimentação e preparação da evacuação.",
+            "score": "best"
+          },
+          {
+            "id": "wait",
+            "label": "Esperar confirmação completa antes de alarmar",
+            "outcome": "Parece prudente, mas degrada a janela de reação.",
+            "score": "poor"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "O tempo perdido torna-se irrecuperável",
+        "summary": "Quando o sistema já está fisicamente degradado, esconder a gravidade acelera o colapso operacional.",
+        "lessons": [
+          "Um blackout após impacto não é um problema menor; deve ser tratado como emergência até se descartar dano maior.",
+          "Um sinal precoce de emergência organiza recursos; não gera pânico por si só.",
+          "A janela útil de resposta mede-se em minutos, não em intuições."
+        ],
+        "diagram": "flowchart LR\n  A[Impacto 21:42] --> B{Resposta inicial}\n  B -->|Emergência imediata| C[Diagnóstico e controlo]\n  B -->|Minimizar dano| D[Atraso operacional]\n  D --> E[Evacuação mais difícil]"
+      }
+    },
+    {
+      "id": "cp3",
+      "time": "22:12",
+      "phase": "Comunicação",
+      "title": "A guarda costeira pede a situação real",
+      "summary": "Livorno contacta o navio enquanto os passageiros já estão a alertar por conta própria.",
+      "systemState": [
+        { "label": "Comunicações", "value": "Inconsistentes", "status": "critical" },
+        { "label": "Autoridade externa", "value": "Intervindo", "status": "warning" },
+        { "label": "Passageiros", "value": "Sem instruções claras", "status": "critical" },
+        { "label": "Evacuação", "value": "Ainda não preparada", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "Narrativa operacional falsa",
+          "detail": "A versão do blackout contradiz as chamadas dos passageiros e a realidade física do navio."
+        },
+        {
+          "level": "warning",
+          "title": "Coordenação SAR degradada",
+          "detail": "Sem informação verdadeira, os meios externos não podem escalar a tempo."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SAR 1979",
+          "title": "Comunicação de emergência",
+          "detail": "A emergência deve ser comunicada com rapidez e sem falsear a situação."
+        },
+        {
+          "code": "SOLAS V/33",
+          "title": "Relatórios de perigo",
+          "detail": "As autoridades marítimas devem receber informação operacional fiável."
+        }
+      ],
+      "decision": {
+        "prompt": "Que comunicação era correta neste ponto?",
+        "recommended": "declare",
+        "options": [
+          {
+            "id": "declare",
+            "label": "Declarar entrada de água e perda de controlo",
+            "outcome": "Permite ao SAR coordenar apoio real e acelera a preparação da evacuação.",
+            "score": "best"
+          },
+          {
+            "id": "minimize",
+            "label": "Manter a versão do blackout",
+            "outcome": "A ajuda externa é atrasada e a autoridade da ponte desgasta-se.",
+            "score": "poor"
+          },
+          {
+            "id": "partial",
+            "label": "Informar apenas banda moderada",
+            "outcome": "Melhora um pouco a coordenação, mas continua a ocultar a criticidade do dano.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "A comunicação também é uma manobra de segurança",
+        "summary": "Mentir ou minimizar numa emergência marítima destrói a capacidade de coordenação e aumenta o dano final.",
+        "lessons": [
+          "O SAR precisa de verdade operacional, não de proteção reputacional.",
+          "Se os passageiros informam melhor do que a ponte, o comando já está degradado.",
+          "A coordenação externa deve ser ativada antes da fase caótica, não depois."
+        ],
+        "diagram": "flowchart LR\n  A[SAR solicita estado] --> B{Mensagem enviada}\n  B -->|Estado real| C[Coordenação precoce]\n  B -->|Blackout| D[Atraso SAR]\n  D --> E[Evacuação sem apoio suficiente]"
+      }
+    },
+    {
+      "id": "cp4",
+      "time": "22:54",
+      "phase": "Evacuação",
+      "title": "Abandono do navio com atraso de 1h12m",
+      "summary": "A ordem chega com banda severa, botes de bombordo inutilizáveis e passageiros já desorganizados.",
+      "systemState": [
+        { "label": "Banda", "value": "Extrema", "status": "critical" },
+        { "label": "Botes", "value": "Parcialmente operativos", "status": "critical" },
+        { "label": "Passageiros", "value": "Sob stress elevado", "status": "critical" },
+        { "label": "Tripulação", "value": "Controlo insuficiente", "status": "warning" }
+      ],
+      "twinAlerts": [
+        {
+          "level": "critical",
+          "title": "Evacuação tardia",
+          "detail": "A inclinação do navio já invalida parte dos meios de abandono."
+        },
+        {
+          "level": "critical",
+          "title": "Formação insuficiente",
+          "detail": "Sem simulacro nem ordens claras, o fluxo de pessoas torna-se caótico."
+        }
+      ],
+      "lawOverlay": [
+        {
+          "code": "SOLAS III/21",
+          "title": "Operação dos meios de salvamento",
+          "detail": "A operação dos botes requer tempo, controlo e condições ainda recuperáveis."
+        },
+        {
+          "code": "STCW A-V/2",
+          "title": "Gestão de crise",
+          "detail": "O pessoal de navios de passageiros deve poder controlar e orientar os passageiros."
+        }
+      ],
+      "decision": {
+        "prompt": "Que decisão teria dado melhor resultado antes de chegar a este ponto?",
+        "recommended": "earlier",
+        "options": [
+          {
+            "id": "earlier",
+            "label": "Ordenar preparação e abandono muito antes",
+            "outcome": "Os meios de salvamento teriam operado com mais margem e menos banda.",
+            "score": "best"
+          },
+          {
+            "id": "same",
+            "label": "Esperar até ao momento em que foi realmente ordenado",
+            "outcome": "A evacuação já nasce degradada e com capacidade parcial.",
+            "score": "poor"
+          },
+          {
+            "id": "internal",
+            "label": "Preparar apenas a tripulação sem informar os passageiros",
+            "outcome": "Reduz algum caos interno, mas não corrige o atraso decisivo.",
+            "score": "acceptable"
+          }
+        ]
+      },
+      "debrief": {
+        "title": "Uma evacuação tardia não se corrige com ordens mais fortes",
+        "summary": "O maior dano nesta fase já tinha sido semeado pelo atraso anterior em reconhecer a emergência e organizar a resposta.",
+        "lessons": [
+          "A preparação para o abandono deve começar antes de o navio perder geometria operacional.",
+          "A ausência de simulacro agrava qualquer evacuação real.",
+          "O tempo não se recupera com mais autoridade verbal quando a física já venceu."
+        ],
+        "diagram": "flowchart LR\n  A[Dano grave] --> B{Ordem de abandono}\n  B -->|Precoce| C[Meios utilizáveis]\n  B -->|Tardia| D[Banda extrema]\n  D --> E[Caos e capacidade reduzida]"
+      }
+    }
+  ]
+}

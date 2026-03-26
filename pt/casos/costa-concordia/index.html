@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="es">
+<html lang="pt">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Costa Concordia — Gemelo Digital | HydroAbyss</title>
+  <title>Costa Concordia — Gêmeo Digital | HydroAbyss</title>
 
   <!-- CSS GLOBAL HYDROABYSS -->
-  <link rel="stylesheet" href="../../assets/css/hydroabyss-core.css">
-  <link rel="stylesheet" href="../../assets/css/diagramas.css">
+  <link rel="stylesheet" href="../../../assets/css/hydroabyss-core.css">
+  <link rel="stylesheet" href="../../../assets/css/diagramas.css">
 
   <!-- CSS DEL SIMULADOR -->
-  <link rel="stylesheet" href="./hydroabyss-sim.css">
+  <link rel="stylesheet" href="../../../casos/costa-concordia/hydroabyss-sim.css">
 
   <!-- MERMAID -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
@@ -21,12 +21,12 @@
 <nav class="nav">
   <div class="nav-stack">
     <div class="nav-links">
-      <a href="../../index.html">← Volver a HydroAbyss</a>
+      <a href="../../index.html">← Voltar para HydroAbyss</a>
     </div>
-    <div class="lang-switch" aria-label="Selector de idioma">
-      <a class="lang-link is-active" href="../../casos/costa-concordia/" lang="es">ES</a>
-      <a class="lang-link" href="../../en/casos/costa-concordia/" lang="en">EN</a>
-      <a class="lang-link" href="../../pt/casos/costa-concordia/" lang="pt">PT</a>
+    <div class="lang-switch" aria-label="Seletor de idioma">
+      <a class="lang-link" href="../../../casos/costa-concordia/" lang="es">ES</a>
+      <a class="lang-link" href="../../../en/casos/costa-concordia/" lang="en">EN</a>
+      <a class="lang-link is-active" href="../../../pt/casos/costa-concordia/" lang="pt">PT</a>
     </div>
   </div>
 </nav>
@@ -35,23 +35,23 @@
 
   <section class="section">
     <div class="container">
-      <span class="tag-telemetry">Caso interactivo</span>
+      <span class="tag-telemetry">Caso interativo</span>
       <h1 class="title-display">Costa Concordia</h1>
       <p class="body-copy">
-        Gemelo digital formativo. Decisiones críticas bajo presión temporal, física y legal.
+        Gêmeo digital formativo. Decisões críticas sob pressão temporal, física e legal.
       </p>
       <div class="sim-actions">
-        <a class="btn-sharp btn-primary" href="../../Costa_Concordia_Desastre.html">Abrir estudio completo</a>
+        <a class="btn-sharp btn-primary" href="../../Costa_Concordia_Desastre.html">Abrir estudo completo</a>
         <a class="btn-sharp btn-secondary-sharp" href="../../index.html">Ver hub de diagramas</a>
       </div>
       <div class="docs-note-grid sim-note-grid">
         <article class="docs-note-card">
-          <h3>Cómo se usa</h3>
-          <p>Empieza por el timeline. Selecciona un checkpoint, lee el estado del sistema y elige una decisión para abrir el debrief.</p>
+          <h3>Como usar</h3>
+          <p>Comece pela timeline. Selecione um checkpoint, leia o estado do sistema e escolha uma decisão para abrir o debrief.</p>
         </article>
         <article class="docs-note-card">
-          <h3>Qué evalúa</h3>
-          <p>Derrota, respuesta inicial, comunicación con autoridades y abandono de buque desde una lectura técnica y normativa.</p>
+          <h3>O que avalia</h3>
+          <p>Rota, resposta inicial, comunicação com autoridades e abandono do navio a partir de uma leitura técnica e normativa.</p>
         </article>
       </div>
     </div>
@@ -66,17 +66,17 @@
       </section>
 
       <section class="sim-panel" id="panelState">
-        <h2>Estado del sistema</h2>
+        <h2>Estado do sistema</h2>
         <div id="stateGrid"></div>
       </section>
 
       <section class="sim-panel" id="panelDecision">
-        <h2>Decisión</h2>
+        <h2>Decisão</h2>
         <div id="decisionCard"></div>
       </section>
 
       <section class="sim-panel" id="panelTwin">
-        <h2>Gemelo digital</h2>
+        <h2>Gêmeo digital</h2>
         <div id="twinHeader"></div>
         <div id="twinOverview"></div>
         <div id="twinModel"></div>
@@ -98,6 +98,6 @@
 
 </main>
 
-<script src="./app.js"></script>
+<script src="../../../casos/costa-concordia/app.js"></script>
 </body>
 </html>

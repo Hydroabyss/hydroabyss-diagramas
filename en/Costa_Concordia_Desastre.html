@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costa Concordia — Technical Case Study | HydroAbyss</title>
+  <link rel="stylesheet" href="../assets/css/hydroabyss-core.css">
+  <link rel="stylesheet" href="../assets/css/diagramas.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-stack">
+    <a href="index.html">← Back to HydroAbyss diagrams</a>
+    <span class="brand">HydroAbyss Cases</span>
+    <a href="https://hydroabyss.com" target="_blank">hydroabyss.com</a>
+  </div>
+  <div class="lang-switch" aria-label="Language switcher">
+    <a class="lang-link" href="../Costa_Concordia_Desastre.html" lang="es">ES</a>
+    <a class="lang-link is-active" href="Costa_Concordia_Desastre.html" lang="en">EN</a>
+    <a class="lang-link" href="../pt/Costa_Concordia_Desastre.html" lang="pt">PT</a>
+  </div>
+</nav>
+
+<div class="main-container main-container-case">
+
+<section class="concordia-hero">
+  <span class="tag-telemetry">Technical case study</span>
+  <h1 class="title-display docs-title-wide">Costa Concordia</h1>
+  <p class="subtitle body-copy">Operational breakdown, command failures, regulatory breaches, and technical lessons from one of the defining passenger-vessel casualties of the modern era.</p>
+  <p class="datos-buque">
+    13 January 2012 · Isola del Giglio, Italy · 114,500 GT · 290.2 m length · 35.5 m beam · 4,229 persons on board · <b style="color:var(--danger)">32 fatalities</b><br>
+    Master: Francesco Schettino · Operator: Costa Crociere (Carnival Corporation) · Built by Fincantieri, Sestri Ponente (2004)<br>
+    <span style="color:var(--warning);">VDR out of service for 15 days before the casualty · last valid recording at 23:36</span>
+  </p>
+  <div class="concordia-action-row">
+    <a class="btn-sharp btn-primary" href="casos/costa-concordia/">Open digital twin</a>
+    <a class="btn-sharp btn-secondary-sharp" href="index.html">View diagrams hub</a>
+  </div>
+  <div class="docs-note-grid concordia-note-grid">
+    <article class="docs-note-card">
+      <h3>Scope</h3>
+      <p>This English version summarizes the causal chain, bridge decisions, evacuation delay, and regulatory consequences.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Use case</h3>
+      <p>Suitable for classroom briefings, officer refreshers, safety meetings, and structured discussion on BRM and crisis management.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Linked resource</h3>
+      <p>The digital twin converts this documentary reading into checkpoints, choices, and debriefs for applied training.</p>
+    </article>
+  </div>
+</section>
+
+<h2 class="section-title">Causal chain</h2>
+
+<div class="docs-panel diagram-shell">
+<div class="mermaid">
+flowchart TD
+    A[Approved route] --> B[Deliberate inchino deviation]
+    B --> C[Unsafe coastal approach at 15.5 kn]
+    C --> D[Late maneuver near Le Scole]
+    D --> E[Hull breach and blackout]
+    E --> F[Delayed emergency recognition]
+    F --> G[Late abandon-ship order]
+    G --> H[Severe list and unusable boats]
+    H --> I[Chaotic evacuation and fatalities]
+</div>
+</div>
+
+<h2 class="section-title">Condensed timeline</h2>
+
+<div class="timeline">
+  <div class="event">
+    <span class="time">21:18</span>
+    <div class="dot dot-warning"></div>
+    <div class="content border-warning">
+      <h4>Unauthorized route deviation</h4>
+      <p>The ship leaves the approved track to perform an inchino close to Isola del Giglio.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">21:42</span>
+    <div class="dot dot-fatal"></div>
+    <div class="content border-fatal">
+      <h4>Impact at Le Scole</h4>
+      <p>The port side strikes rock, opening a major hull breach and triggering progressive flooding.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">21:43</span>
+    <div class="dot dot-critical"></div>
+    <div class="content border-critical">
+      <h4>Blackout and propulsion loss</h4>
+      <p>Power generation and propulsion are compromised while watertight integrity is already failing.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">22:12</span>
+    <div class="dot dot-critical"></div>
+    <div class="content border-critical">
+      <h4>False communication to authorities</h4>
+      <p>The emergency is minimized as a simple blackout while passengers are already calling ashore.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">22:54</span>
+    <div class="dot dot-fatal"></div>
+    <div class="content border-fatal">
+      <h4>Abandon ship ordered too late</h4>
+      <p>The evacuation begins with severe list, partial appliance availability, and degraded crowd control.</p>
+    </div>
+  </div>
+  <div class="event">
+    <span class="time">00:30</span>
+    <div class="dot dot-error"></div>
+    <div class="content border-error">
+      <h4>Master leaves the vessel</h4>
+      <p>Command continuity is broken while people remain on board and external coordination intensifies.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title">Regulatory picture</h2>
+
+<div class="violations-grid">
+  <div class="v-card vc-solas">
+    <h3>SOLAS</h3>
+    <ul>
+      <li>Voyage planning and navigation discipline were compromised before the casualty itself.</li>
+      <li>Emergency signal and abandon-ship timing were delayed beyond any usable margin.</li>
+      <li>Damage stability and the practical operability of life-saving appliances became central failure points.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-colreg">
+    <h3>COLREG</h3>
+    <ul>
+      <li>Safe speed, lookout, and timely avoiding action were not sustained during the coastal approach.</li>
+      <li>The collision sequence reflects a breakdown in basic seamanship rather than a single isolated mistake.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-ism">
+    <h3>ISM</h3>
+    <ul>
+      <li>Safety management did not prevent or stop a known unsafe practice.</li>
+      <li>Emergency response ashore and on board was not activated with the urgency required by the casualty profile.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-stcw">
+    <h3>STCW</h3>
+    <ul>
+      <li>Bridge resource management, crisis leadership, and passenger control competence were central weaknesses.</li>
+      <li>The case remains a reference for training in command authority and emergency communication.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-marpol">
+    <h3>MARPOL</h3>
+    <ul>
+      <li>The casualty immediately created a pollution-control problem with heavy fuel on board.</li>
+      <li>Post-casualty recovery demonstrated the scale of environmental risk linked to passenger-vessel damage.</li>
+    </ul>
+  </div>
+  <div class="v-card vc-tecnico">
+    <h3>Technical implications</h3>
+    <ul>
+      <li>Hull breach magnitude exceeded ordinary survivability assumptions.</li>
+      <li>VDR failure and watertight-door issues reduced both resilience and investigative clarity.</li>
+      <li>Escalating list degraded evacuation geometry faster than command adapted.</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section-title">Operational takeaways</h2>
+
+<div class="ops-grid">
+  <div class="ops-card">
+    <h3>Route discipline is a primary barrier</h3>
+    <p>The casualty began with a discretionary deviation, not with the rock strike. Voyage planning remains an operational and legal safeguard, not a formality.</p>
+  </div>
+  <div class="ops-card">
+    <h3>Emergency communication is part of ship control</h3>
+    <p>Minimizing the damage delayed the full mobilization of external support and degraded onboard decision-making at the same time.</p>
+  </div>
+  <div class="ops-card">
+    <h3>Delayed evacuation creates structural disadvantage</h3>
+    <p>Once list becomes severe, no amount of verbal authority can restore the original geometry for orderly abandonment.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <a href="https://hydroabyss.com" target="_blank">HydroAbyss</a> — Maritime training documentation · March 2026<br>
+  Editorial synthesis prepared by HydroAbyss from technical and regulatory reference material.
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#081a2d',
+      primaryBorderColor: '#00d4ff',
+      primaryTextColor: '#e8f4f8',
+      secondaryColor: '#0a1e30',
+      tertiaryColor: '#061525',
+      lineColor: '#00d4ff',
+      fontSize: '12px',
+      fontFamily: 'Inter, sans-serif'
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis',
+      nodeSpacing: 25,
+      rankSpacing: 55,
+      useMaxWidth: true
+    }
+  });
+</script>
+</body>
+</html>

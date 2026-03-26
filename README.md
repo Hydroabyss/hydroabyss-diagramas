@@ -13,15 +13,37 @@ Repositorio de diagramas y recursos visuales publicados con GitHub Pages para so
 ```text
 hydroabyss-diagramas/
 ├── index.html
+├── en/
+│   ├── index.html
+│   ├── IMO_Convenios_Codigos.html
+│   ├── Costa_Concordia_Desastre.html
+│   └── casos/
+│       └── costa-concordia/
+│           ├── index.html
+│           └── scenario.json
+├── pt/
+│   ├── index.html
+│   ├── IMO_Convenios_Codigos.html
+│   ├── Costa_Concordia_Desastre.html
+│   └── casos/
+│       └── costa-concordia/
+│           ├── index.html
+│           └── scenario.json
 ├── assets/
 │   └── css/
-│       └── hydroabyss-core.css
+│       ├── hydroabyss-core.css
+│       └── diagramas.css
 ├── casos/
 │   └── costa-concordia/
 │       ├── index.html
 │       ├── app.js
 │       ├── scenario.json
 │       └── hydroabyss-sim.css
+├── .github/
+│   └── workflows/
+│       └── i18n-guard.yml
+└── scripts/
+    └── check_i18n.py
 ```
 
 Ruta objetivo publicada:
@@ -33,6 +55,8 @@ Ruta objetivo publicada:
 | Archivo | Descripción | URL |
 |---|---|---|
 | `index.html` | Portada pública de diagramas | `https://hydroabyss.github.io/hydroabyss-diagramas/` |
+| `en/index.html` | Portada pública en inglés | `https://hydroabyss.github.io/hydroabyss-diagramas/en/` |
+| `pt/index.html` | Portada pública en portugués | `https://hydroabyss.github.io/hydroabyss-diagramas/pt/` |
 | `casos/costa-concordia/index.html` | Caso interactivo canónico de Costa Concordia | `https://hydroabyss.github.io/hydroabyss-diagramas/casos/costa-concordia/` |
 | `IMO_Convenios_Codigos.html` | Diagrama interactivo sobre convenios y códigos IMO | `https://hydroabyss.github.io/hydroabyss-diagramas/IMO_Convenios_Codigos.html` |
 | `Costa_Concordia_Desastre.html` | Caso de estudio técnico sobre la cadena de errores del Costa Concordia | `https://hydroabyss.github.io/hydroabyss-diagramas/Costa_Concordia_Desastre.html` |
@@ -48,10 +72,11 @@ Este repositorio sirve como capa pública ligera para:
 
 ## Stack
 
-- HTML estático
-- CSS inline por página
+- HTML estático multiidioma
+- CSS compartido (`hydroabyss-core.css` + `diagramas.css`)
 - Mermaid.js vía CDN
 - GitHub Pages
+- validación CI para i18n
 
 ## Dependencia externa
 
@@ -87,34 +112,49 @@ mermaid.initialize({
 
 ## Línea visual
 
-El repositorio sigue una versión simplificada del lenguaje visual HydroAbyss:
+El repositorio sigue el sistema visual HydroAbyss:
 
-- base púrpura técnica para GitHub Pages
-- superficies blancas para legibilidad de diagramas
-- tipografía `Inter, Segoe UI, Arial, sans-serif`
-- tarjetas con sombra suave y bordes redondeados
-- navegación superior mínima en los documentos largos
+- base oceánica oscura
+- acentos cyan / blue / teal / warning / danger
+- tipografía `Space Grotesk`, `Inter` y `JetBrains Mono`
+- tarjetas técnicas oscuras con bordes de estado
+- navegación superior y selector de idioma consistentes entre páginas
 
 Variables compartidas actualmente:
 
 ```css
 :root {
-  --primary: #673de6;
-  --primary-dark: #5025d1;
-  --meteorite-dark: #2f1c6a;
-  --meteorite: #8c85ff;
-  --meteorite-light: #d5dfff;
-  --primary-light: #ebe4ff;
+  --bg: #030d1a;
+  --bg2: #061525;
+  --bg3: #0a1e30;
+  --cyan: #00d4ff;
+  --blue: #0070f3;
+  --teal: #00b4d8;
   --success: #00b090;
   --danger: #fc5185;
   --warning: #ffcd35;
   --azure: #357df9;
-  --dark: #1d1e20;
-  --gray: #727586;
-  --gray-border: #dadce0;
-  --gray-light: #f2f3f6;
 }
 ```
+
+## Requisito obligatorio de i18n
+
+Todo documento público debe existir en:
+
+- español (`/`)
+- inglés (`/en/`)
+- portugués (`/pt/`)
+
+No se debe considerar un cambio como publicable si falta alguna de esas versiones.
+
+Guardia implementada:
+
+- script local: `python3 scripts/check_i18n.py`
+- workflow CI: `.github/workflows/i18n-guard.yml`
+
+Nota operativa:
+
+- para bloquear de forma estricta la llegada a `main`, GitHub debe exigir el check `i18n-guard` mediante branch protection
 
 ## Integración con el blog de HydroAbyss
 
@@ -191,18 +231,19 @@ Incluye:
 
 - estructura determinista para GitHub Pages
 - `index.html` principal del caso
-- `app.js` mínimo funcional
-- `scenario.json` baseline
+- `app.js` con interfaz dinámica en ES/EN/PT según `lang`
+- `scenario.json` localizado por idioma
 - `hydroabyss-sim.css` alineado con HydroAbyss Core
 
 ## Flujo de trabajo recomendado
 
 1. Editar el HTML localmente.
 2. Probar en navegador.
-3. Comprobar que Mermaid renderiza bien en desktop y mobile.
-4. Revisar enlaces internos y externos.
-5. Hacer commit descriptivo.
-6. Subir a `main` para que GitHub Pages publique.
+3. Ejecutar `python3 scripts/check_i18n.py`.
+4. Comprobar que Mermaid renderiza bien en desktop y mobile.
+5. Revisar enlaces internos, selector de idioma y rutas entre versiones.
+6. Hacer commit descriptivo.
+7. Subir a `main` para que GitHub Pages publique.
 
 ## Reglas de mantenimiento
 
@@ -211,6 +252,7 @@ Incluye:
 - no introducir build tools si no son estrictamente necesarias
 - mantener URLs estables para no romper `iframe` o enlaces del blog principal
 - conservar títulos claros y técnicos
+- no publicar piezas nuevas sin sus versiones ES/EN/PT
 - verificar que los cambios visuales no degraden la legibilidad del contenido
 
 ## Relación con HydroAbyss
