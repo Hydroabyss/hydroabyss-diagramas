@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Costa Concordia — Gemelo Digital | HydroAbyss</title>
+
+  <!-- CSS GLOBAL HYDROABYSS -->
+  <link rel="stylesheet" href="../../assets/css/hydroabyss-core.css">
+
+  <!-- CSS DEL SIMULADOR -->
+  <link rel="stylesheet" href="./hydroabyss-sim.css">
+
+  <!-- MERMAID -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-links">
+    <a href="../../index.html">← Volver a HydroAbyss</a>
+  </div>
+</nav>
+
+<main class="sim-container">
+
+  <section class="section">
+    <div class="container">
+      <span class="tag-telemetry">Caso interactivo</span>
+      <h1 class="title-display">Costa Concordia</h1>
+      <p class="body-copy">
+        Gemelo digital formativo. Decisiones críticas bajo presión temporal, física y legal.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container sim-grid">
+
+      <section class="sim-panel" id="panelTimeline">
+        <h2>Timeline</h2>
+        <div id="timelineList"></div>
+      </section>
+
+      <section class="sim-panel" id="panelState">
+        <h2>Estado del sistema</h2>
+        <div id="stateGrid"></div>
+      </section>
+
+      <section class="sim-panel" id="panelDecision">
+        <h2>Decisión</h2>
+        <div id="decisionCard"></div>
+      </section>
+
+      <section class="sim-panel" id="panelTwin">
+        <h2>Gemelo digital</h2>
+        <div id="twinAlerts"></div>
+        <div id="lawOverlay"></div>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="section" id="panelDebrief" hidden>
+    <div class="container">
+      <h2 class="title-section">Debrief</h2>
+      <div id="debriefContent"></div>
+      <div class="mermaid" id="mermaidDivergence"></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>

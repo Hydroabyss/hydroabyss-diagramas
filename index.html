@@ -5,10 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HydroAbyss — Diagramas STCW</title>
   <style>
+    :root {
+      --primary: #673de6;
+      --primary-dark: #5025d1;
+      --meteorite-dark: #2f1c6a;
+      --meteorite: #8c85ff;
+      --meteorite-light: #d5dfff;
+      --primary-light: #ebe4ff;
+      --success: #00b090;
+      --danger: #fc5185;
+      --warning: #ffcd35;
+      --dark: #1d1e20;
+      --gray: #727586;
+      --gray-border: #dadce0;
+      --gray-light: #f2f3f6;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #0b3d91 0%, #1a6bb5 50%, #0b3d91 100%);
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--meteorite-dark) 0%, #3b1f8e 50%, var(--meteorite-dark) 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -18,71 +33,94 @@
     .container {
       background: #fff;
       border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
-      max-width: 700px;
+      box-shadow: 0 8px 40px rgba(47,28,106,0.3);
+      max-width: 750px;
       width: 100%;
       padding: 50px 40px;
       text-align: center;
     }
     .logo { font-size: 2.5rem; margin-bottom: 10px; }
-    h1 { color: #0b3d91; font-size: 1.8rem; margin-bottom: 5px; }
-    .subtitle { color: #666; font-size: 0.95rem; margin-bottom: 35px; }
+    h1 { color: var(--meteorite-dark); font-size: 1.8rem; margin-bottom: 5px; }
+    .subtitle { color: var(--gray); font-size: 0.95rem; margin-bottom: 35px; }
     .diagram-list { list-style: none; padding: 0; }
-    .diagram-list li { margin-bottom: 12px; }
+    .diagram-list li { margin-bottom: 14px; }
     .diagram-list a {
       display: block;
-      padding: 16px 24px;
-      background: #f4f6f9;
-      border-radius: 10px;
+      padding: 18px 24px;
+      background: var(--gray-light);
+      border-radius: 12px;
       text-decoration: none;
-      color: #0b3d91;
+      color: var(--meteorite-dark);
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.2s;
-      border-left: 4px solid #1a6bb5;
+      transition: all 0.25s ease;
+      border-left: 4px solid var(--primary);
       text-align: left;
     }
     .diagram-list a:hover {
-      background: #e8f4fd;
-      transform: translateX(5px);
-      box-shadow: 0 2px 12px rgba(26,107,181,0.15);
+      background: var(--primary-light);
+      transform: translateX(6px);
+      box-shadow: 0 4px 16px rgba(103,61,230,0.15);
+      border-left-color: var(--primary-dark);
     }
     .diagram-list .desc {
       font-weight: 400;
       font-size: 0.82rem;
-      color: #777;
-      margin-top: 4px;
+      color: var(--gray);
+      margin-top: 5px;
+      line-height: 1.4;
     }
+    .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      margin-top: 6px;
+      margin-right: 4px;
+    }
+    .tag-new { background: var(--success); color: #fff; }
+    .tag-case { background: var(--danger); color: #fff; }
     .footer {
       margin-top: 35px;
-      color: #aaa;
+      color: var(--gray);
       font-size: 0.78rem;
     }
+    .footer a { color: var(--primary); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="logo">⚓</div>
     <h1>HydroAbyss</h1>
-    <p class="subtitle">Diagramas y Flujogramas — Formación Marítima STCW</p>
+    <p class="subtitle">Diagramas y Flujogramas — Formaci&oacute;n Mar&iacute;tima STCW</p>
 
     <ul class="diagram-list">
       <li>
-        <a href="IMO_Convenios_Codigos.html">
-          🏛️ IMO — Convenios y Códigos
-          <div class="desc">Estructura completa de la OMI: convenios (SOLAS, MARPOL, STCW, COLREG), códigos (IMDG, ISM, ISPS) y conceptos clave</div>
+        <a href="casos/costa-concordia/" style="border-left-color: var(--success);">
+          ⚓ Costa Concordia — Gemelo Digital
+          <div class="desc">Ruta canónica del caso interactivo para GitHub Pages con estructura determinista, CSS core y assets separados.</div>
+          <span class="tag tag-new">Ruta principal</span>
         </a>
       </li>
       <li>
-        <a href="Costa_Concordia_Desastre.html" style="border-left-color: #ff6b6b;">
+        <a href="IMO_Convenios_Codigos.html">
+          🏛️ IMO — Convenios y C&oacute;digos
+          <div class="desc">Estructura completa de la OMI: convenios (SOLAS, MARPOL, STCW, COLREG), c&oacute;digos (IMDG, ISM, ISPS) y conceptos clave</div>
+        </a>
+      </li>
+      <li>
+        <a href="Costa_Concordia_Desastre.html" style="border-left-color: var(--danger);">
           💥 Costa Concordia — Cadena de Errores y Violaciones
-          <div class="desc">Línea temporal minuto a minuto, flujograma causal, violaciones de SOLAS, COLREG, ISM, STCW, MARPOL y lecciones aprendidas</div>
+          <div class="desc">L&iacute;nea temporal minuto a minuto, flujograma causal, violaciones de SOLAS, COLREG, ISM, STCW, MARPOL y lecciones aprendidas</div>
+          <span class="tag tag-case">Caso de estudio</span>
         </a>
       </li>
     </ul>
 
     <div class="footer">
-      HydroAbyss — Generador de Manuales STCW<br>
+      <a href="https://hydroabyss.com" target="_blank">HydroAbyss</a> — Generador de Manuales STCW<br>
       Diagramas publicados con GitHub Pages
     </div>
   </div>
