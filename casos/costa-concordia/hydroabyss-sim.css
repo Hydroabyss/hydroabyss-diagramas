@@ -4,8 +4,9 @@
 
 .sim-grid {
   display: grid;
-  grid-template-columns: 300px 360px 1fr 420px;
+  grid-template-columns: minmax(240px, 280px) minmax(280px, 360px) minmax(320px, 1fr) minmax(280px, 380px);
   gap: 24px;
+  align-items: start;
 }
 
 .sim-panel {
@@ -14,14 +15,276 @@
   border-radius: var(--radius-md);
   padding: 24px;
   box-shadow: var(--shadow-soft);
+  min-height: 100%;
 }
 
 .sim-panel h2 {
+  margin: 0 0 18px;
   font-family: var(--font-display);
-  text-transform: uppercase;
   font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--white-strong);
 }
 
 .tag-telemetry {
   margin-bottom: 12px;
+}
+
+.panel-subheader {
+  display: inline-flex;
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.timeline-item,
+.decision-option {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(3, 13, 26, 0.78);
+  color: var(--white);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.timeline-item + .timeline-item,
+.state-card + .state-card,
+.alert-card + .alert-card,
+.law-card + .law-card,
+.decision-option + .decision-option {
+  margin-top: 12px;
+}
+
+.timeline-item:hover,
+.timeline-item:focus-visible,
+.decision-option:hover,
+.decision-option:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  background: rgba(10, 30, 48, 0.92);
+}
+
+.timeline-item.is-active,
+.decision-option.is-selected {
+  border-color: var(--cyan);
+  background: rgba(0, 112, 243, 0.12);
+}
+
+.timeline-time,
+.timeline-phase,
+.decision-time,
+.decision-phase,
+.state-label,
+.state-status,
+.alert-level,
+.law-code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.timeline-time,
+.decision-time,
+.law-code {
+  color: var(--cyan);
+}
+
+.timeline-phase,
+.decision-phase,
+.state-status,
+.alert-level {
+  color: var(--gray);
+}
+
+.timeline-item strong,
+.decisionCard h3,
+.decision-header + h3,
+.alert-card h3,
+.law-card h3,
+.debrief-card h3 {
+  display: block;
+  margin: 10px 0 8px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--white-strong);
+}
+
+.timeline-summary,
+.decision-copy,
+.decision-option-outcome,
+.alert-card p,
+.law-card p,
+.debrief-card p,
+.decision-result p {
+  display: block;
+  margin: 0;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.timeline-choice {
+  display: inline-flex;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.state-card,
+.alert-card,
+.law-card,
+.debrief-card,
+.decision-result {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(3, 13, 26, 0.78);
+}
+
+.state-card strong {
+  display: block;
+  margin: 8px 0 6px;
+  font-size: 1.05rem;
+  color: var(--white-strong);
+}
+
+.state-ok {
+  border-left: 3px solid #00b090;
+}
+
+.state-warning {
+  border-left: 3px solid #ffcd35;
+}
+
+.state-critical {
+  border-left: 3px solid #fc5185;
+}
+
+.alert-warning {
+  border-left: 3px solid #ffcd35;
+}
+
+.alert-critical {
+  border-left: 3px solid #fc5185;
+}
+
+.decision-header,
+.decision-option-footer,
+.debrief-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.decision-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.decision-option-title {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  color: var(--white-strong);
+}
+
+.decision-option-footer {
+  margin-top: 12px;
+}
+
+.decision-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-outline {
+  border: 1px solid var(--border);
+  color: var(--gray);
+}
+
+.score-best {
+  background: rgba(0, 176, 144, 0.14);
+  color: #8ef0dd;
+}
+
+.score-acceptable {
+  background: rgba(255, 205, 53, 0.14);
+  color: #ffe38b;
+}
+
+.score-poor {
+  background: rgba(252, 81, 133, 0.14);
+  color: #ff9ebb;
+}
+
+.decision-result,
+.error-box {
+  margin-top: 18px;
+}
+
+.law-grid,
+.lesson-list {
+  display: grid;
+  gap: 12px;
+}
+
+.lesson-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.lesson-list li {
+  color: var(--white);
+  line-height: 1.65;
+}
+
+#panelTwin {
+  display: grid;
+  gap: 16px;
+}
+
+#mermaidDivergence {
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(3, 13, 26, 0.78);
+}
+
+@media (max-width: 1320px) {
+  .sim-grid {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .sim-container {
+    padding-top: 120px;
+  }
+
+  .sim-grid {
+    grid-template-columns: 1fr;
+  }
 }
