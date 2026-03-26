@@ -16,6 +16,21 @@
   margin-top: 24px;
 }
 
+.sim-container .title-display {
+  margin: 0;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.sim-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .sim-grid {
   display: grid;
   grid-template-columns: minmax(240px, 280px) minmax(280px, 360px) minmax(320px, 1fr) minmax(280px, 380px);
@@ -590,6 +605,10 @@
   .sim-note-grid,
   .sim-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sim-actions {
+    flex-direction: column;
   }
 
   .twin-command-bar,

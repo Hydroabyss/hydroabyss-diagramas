@@ -262,10 +262,61 @@
   width: min(calc(100% - 8vw), 1280px);
   margin: 120px auto 80px;
   padding: 28px;
-  background: transparent;
+  background:
+    linear-gradient(180deg, rgba(0, 212, 255, 0.05), rgba(0, 212, 255, 0) 22%),
+    rgba(3, 13, 26, 0.12);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+}
+
+.main-container-case {
+  padding: 36px;
+}
+
+.concordia-hero {
+  display: grid;
+  gap: 18px;
+}
+
+.main-container-case .title-display {
+  margin: 0;
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.concordia-hero .subtitle,
+.concordia-hero .datos-buque {
+  max-width: 84ch;
+  margin-inline: auto;
+}
+
+.concordia-note-grid {
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+}
+
+.concordia-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn-secondary-sharp {
+  border-color: var(--border);
+  color: var(--white);
+  background: rgba(3, 13, 26, 0.78);
+}
+
+.btn-secondary-sharp::before {
+  background: rgba(0, 212, 255, 0.12);
+}
+
+.btn-secondary-sharp:hover,
+.btn-secondary-sharp:focus-visible {
+  border-color: var(--border-strong);
 }
 
 .main-container > h1,
@@ -508,7 +559,7 @@ h1 {
 .tag-marpol { background: rgba(0, 176, 144, 0.16); color: #8ef0dd; }
 .tag-ley { background: rgba(255, 255, 255, 0.08); color: var(--white); }
 .tag-sar { background: rgba(53, 125, 249, 0.16); color: #a7cbff; }
-.tag-tesis { background: rgba(140, 133, 255, 0.16); color: #cfcaff; }
+.tag-tesis { background: rgba(0, 212, 255, 0.12); color: var(--cyan); }
 
 .border-normal { border-left: 3px solid var(--success); }
 .border-warning { border-left: 3px solid var(--warning); }
@@ -544,7 +595,7 @@ h1 {
 .vc-stcw { border-left: 4px solid var(--warning); }
 .vc-marpol { border-left: 4px solid var(--success); }
 .vc-ley { border-left: 4px solid rgba(255, 255, 255, 0.18); }
-.vc-tecnico { border-left: 4px solid #8c85ff; }
+.vc-tecnico { border-left: 4px solid var(--teal); }
 
 .transcript {
   border-left: 4px solid var(--cyan);
@@ -622,6 +673,14 @@ h1 {
     width: min(calc(100% - 32px), 1280px);
     margin: 100px auto 48px;
     padding: 18px;
+  }
+
+  .main-container-case {
+    padding: 22px;
+  }
+
+  .concordia-note-grid {
+    grid-template-columns: 1fr;
   }
 
   .timeline::before {

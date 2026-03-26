@@ -11,19 +11,40 @@
 
 <nav class="top-nav">
   <a href="index.html">← Volver a Diagramas HydroAbyss</a>
-  <span class="brand">⚓ HydroAbyss STCW</span>
+  <span class="brand">HydroAbyss Cases</span>
   <a href="https://hydroabyss.com" target="_blank">hydroabyss.com</a>
 </nav>
 
-<div class="main-container">
+<div class="main-container main-container-case">
 
-<h1>Desastre del Costa Concordia</h1>
-<p class="subtitle">13 de enero de 2012 — Isola del Giglio, Italia</p>
-<p class="datos-buque">
-  Costa Concordia · Bandera: Italia · 114.500 GT · 290,2 m eslora · 35,5 m manga · 4.229 personas a bordo · <b style="color:var(--danger)">32 fallecidos</b><br>
-  Capitán: Francesco Schettino · Armador: Costa Crociere (Carnival Corporation) · Construido: Fincantieri, Sestri Ponente (2004)<br>
-  <span style="color:#e65100;">VDR (caja negra) fuera de servicio desde 15 días antes del accidente — dejó de grabar a las 23:36</span>
-</p>
+<section class="concordia-hero">
+  <span class="tag-telemetry">Caso de estudio técnico</span>
+  <h1 class="title-display docs-title-wide">Costa Concordia</h1>
+  <p class="subtitle body-copy">Cadena de eventos, fallos de mando, incumplimientos normativos y lecciones operativas de uno de los accidentes marítimos más relevantes de la era moderna.</p>
+  <p class="datos-buque">
+    13 de enero de 2012 · Isola del Giglio, Italia · 114.500 GT · 290,2 m eslora · 35,5 m manga · 4.229 personas a bordo · <b style="color:var(--danger)">32 fallecidos</b><br>
+    Capitán: Francesco Schettino · Armador: Costa Crociere (Carnival Corporation) · Construido: Fincantieri, Sestri Ponente (2004)<br>
+    <span style="color:var(--warning);">VDR fuera de servicio desde 15 días antes del accidente · última grabación válida a las 23:36</span>
+  </p>
+  <div class="concordia-action-row">
+    <a class="btn-sharp btn-primary" href="casos/costa-concordia/">Abrir gemelo digital</a>
+    <a class="btn-sharp btn-secondary-sharp" href="index.html">Ver hub de diagramas</a>
+  </div>
+  <div class="docs-note-grid concordia-note-grid">
+    <article class="docs-note-card">
+      <h3>Foco del caso</h3>
+      <p>Desviación deliberada de derrota, respuesta tardía, crisis de mando y fallo sistémico de cultura de seguridad.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Qué integra</h3>
+      <p>Flujograma causal, línea temporal, transcripción radio, normativa aplicable, análisis técnico y operación post-siniestro.</p>
+    </article>
+    <article class="docs-note-card">
+      <h3>Relación con el gemelo</h3>
+      <p>El caso largo sirve como base documental. El gemelo digital convierte esa secuencia en checkpoints y decisiones comparables.</p>
+    </article>
+  </div>
+</section>
 
 <!-- ═══════════════════════════════════════ -->
 <!-- FLUJOGRAMA: CADENA DE ERRORES          -->
@@ -92,15 +113,15 @@ graph TD
     FLOOD -.-|"❌ SOLAS II-1<br/>Subdivisión"| V_SUBDIV(["SOLAS II-1<br/>Compartimentado"])
 
     %% ── ESTILOS ──
-    classDef root fill:#2f1c6a,stroke:#673de6,color:#fff,stroke-width:3px
-    classDef causa fill:#ebe4ff,stroke:#fc5185,color:#2f1c6a
-    classDef evento fill:#d5dfff,stroke:#5025d1,color:#2f1c6a
-    classDef critico fill:#ffe0e8,stroke:#fc5185,color:#2f1c6a,stroke-width:2px
-    classDef fatal fill:#fc5185,stroke:#cc0044,color:#fff,stroke-width:3px
-    classDef violacion fill:#ebe4ff,stroke:#8c85ff,color:#5025d1,stroke-dasharray:5
-    classDef guardacostas fill:#e0f7f0,stroke:#00b090,color:#1d1e20
-    classDef tecnico fill:#fff8e1,stroke:#ffcd35,color:#1d1e20
-    classDef salvage fill:#e0f7f0,stroke:#00b090,color:#1d1e20
+    classDef root fill:#061525,stroke:#00d4ff,color:#e8f4f8,stroke-width:3px
+    classDef causa fill:#081a2d,stroke:#00d4ff,color:#e8f4f8
+    classDef evento fill:#0a1e30,stroke:#357df9,color:#e8f4f8
+    classDef critico fill:#1b1019,stroke:#fc5185,color:#ffe6ee,stroke-width:2px
+    classDef fatal fill:#3a0d18,stroke:#fc5185,color:#fff,stroke-width:3px
+    classDef violacion fill:#081a2d,stroke:#357df9,color:#b6d7ff,stroke-dasharray:5
+    classDef guardacostas fill:#08211a,stroke:#00b090,color:#dcfff6
+    classDef tecnico fill:#1d1808,stroke:#ffcd35,color:#fff2bf
+    classDef salvage fill:#08211a,stroke:#00b090,color:#dcfff6
 
     class ROOT root
     class CAUSAS,SALUTO,CAPITAN,NAVIERA causa
