@@ -2,6 +2,15 @@
   padding-top: 140px;
 }
 
+.sim-container > .section:first-child {
+  padding-top: 72px;
+  padding-bottom: 88px;
+}
+
+.sim-container > .section + .section {
+  padding-top: 0;
+}
+
 .sim-note-grid {
   grid-template-columns: repeat(2, minmax(240px, 1fr));
   margin-top: 24px;
@@ -23,6 +32,26 @@
   min-height: 100%;
 }
 
+#panelTwin {
+  position: sticky;
+  top: 108px;
+  overflow: hidden;
+}
+
+#panelTwin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(0, 212, 255, 0.08), transparent 24%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: auto, 28px 28px, 28px 28px;
+  opacity: 0.22;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.35));
+}
+
 .sim-panel h2 {
   margin: 0 0 18px;
   font-family: var(--font-display);
@@ -33,6 +62,10 @@
 
 .tag-telemetry {
   margin-bottom: 12px;
+}
+
+.tag-telemetry::before {
+  animation: telemetry-pulse 2.4s ease-in-out infinite;
 }
 
 .panel-subheader {
@@ -154,7 +187,10 @@
 .alert-card,
 .law-card,
 .debrief-card,
-.decision-result {
+.decision-result,
+.metric-card,
+.compare-card,
+.model-card {
   padding: 16px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -249,6 +285,250 @@
   margin-top: 18px;
 }
 
+.decision-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.nav-mini {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(3, 13, 26, 0.78);
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-mini:hover,
+.nav-mini:focus-visible {
+  border-color: var(--border-strong);
+  background: rgba(10, 30, 48, 0.92);
+}
+
+.twin-overview,
+.twin-compare-grid,
+.twin-model-grid,
+.twin-command-bar,
+.twin-delta-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.twin-command-bar {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.command-card {
+  position: relative;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(180deg, rgba(0, 212, 255, 0.08), rgba(0, 212, 255, 0) 68%),
+    rgba(3, 13, 26, 0.9);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.command-card strong,
+.delta-card strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.05;
+  color: var(--white-strong);
+}
+
+.command-card p,
+.delta-card p {
+  margin: 8px 0 0;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+.command-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.command-chip::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+}
+
+.command-chip.is-critical {
+  background: rgba(252, 81, 133, 0.14);
+  color: #ff9ebb;
+}
+
+.command-chip.is-warning {
+  background: rgba(255, 205, 53, 0.14);
+  color: #ffe38b;
+}
+
+.twin-overview {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.metric-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric-label,
+.metric-note,
+.model-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.metric-label,
+.model-label {
+  color: var(--gray);
+}
+
+.metric-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  margin: 10px 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--white-strong);
+}
+
+.metric-unit {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+.metric-bar,
+.model-bar {
+  margin-top: 10px;
+}
+
+.bar-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--blue));
+  transition: width 0.45s ease, background 0.3s ease;
+}
+
+.bar-fill.tone-warning {
+  background: linear-gradient(90deg, #ffcd35, #ff8c00);
+}
+
+.bar-fill.tone-critical {
+  background: linear-gradient(90deg, #fc5185, #ff6b6b);
+}
+
+.metric-note {
+  margin-top: 8px;
+  color: var(--gray);
+}
+
+.twin-compare-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.compare-card.is-recommended {
+  border-color: rgba(0, 176, 144, 0.35);
+}
+
+.compare-card.is-selected {
+  border-color: rgba(0, 212, 255, 0.24);
+}
+
+.compare-card h3,
+.model-card h3 {
+  margin: 8px 0 6px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: var(--white-strong);
+}
+
+.compare-card p,
+.model-card p {
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.model-card strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--white-strong);
+  font-size: 1rem;
+}
+
+.twin-delta-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.delta-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(3, 13, 26, 0.82);
+}
+
+.delta-card strong {
+  font-size: 1.45rem;
+}
+
+.delta-card strong.delta-danger {
+  color: #ff9ebb;
+}
+
+.delta-card strong.delta-safe {
+  color: #8ef0dd;
+}
+
+.delta-card strong.delta-note {
+  color: #8fb9ff;
+}
+
+.delta-card.is-placeholder {
+  grid-column: 1 / -1;
+}
+
 .law-grid,
 .lesson-list {
   display: grid;
@@ -270,6 +550,15 @@
   gap: 16px;
 }
 
+#twinHeader,
+#twinDelta,
+#twinModel,
+#twinOverview,
+#lawOverlay {
+  display: grid;
+  gap: 12px;
+}
+
 #mermaidDivergence {
   margin-top: 24px;
   padding: 16px;
@@ -282,6 +571,10 @@
   .sim-grid {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
   }
+
+  #panelTwin {
+    position: static;
+  }
 }
 
 @media (max-width: 760px) {
@@ -289,8 +582,35 @@
     padding-top: 120px;
   }
 
+  .sim-container > .section:first-child {
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
   .sim-note-grid,
   .sim-grid {
     grid-template-columns: 1fr;
+  }
+
+  .twin-command-bar,
+  .twin-delta-grid,
+  .twin-overview,
+  .twin-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes telemetry-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.45);
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+    box-shadow: 0 0 0 8px rgba(0, 212, 255, 0);
   }
 }
