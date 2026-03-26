@@ -2,68 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMO — Convenios y Códigos | HydroAbyss</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 30px;
-    }
-    h1 {
-      text-align: center;
-      color: #0b3d91;
-      margin-bottom: 5px;
-    }
-    h2 {
-      text-align: center;
-      color: #555;
-      font-weight: 400;
-      margin-top: 0;
-      font-size: 1rem;
-    }
-    .mermaid {
-      display: flex;
-      justify-content: center;
-      margin: 20px auto;
-      max-width: 1400px;
-    }
-    .conceptos {
-      max-width: 1100px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 18px;
-    }
-    .concepto-card {
-      border-radius: 10px;
-      padding: 18px 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .concepto-card h3 { margin: 0 0 8px 0; font-size: 1rem; }
-    .concepto-card p { margin: 0; font-size: 0.88rem; line-height: 1.5; color: #333; }
-    .concepto-card ul { margin: 6px 0 0 0; padding-left: 18px; font-size: 0.85rem; color: #444; }
-    .card-imo { background: #e8eaf6; border-left: 5px solid #0b3d91; }
-    .card-solas { background: #e3f2fd; border-left: 5px solid #1565c0; }
-    .card-marpol { background: #e8f5e9; border-left: 5px solid #2e7d32; }
-    .card-stcw { background: #fff8e1; border-left: 5px solid #f57f17; }
-    .card-colreg { background: #fce4ec; border-left: 5px solid #c62828; }
-    .card-sar { background: #f3e5f5; border-left: 5px solid #7b1fa2; }
-    .card-isps { background: #efebe9; border-left: 5px solid #4e342e; }
-    .card-imdg { background: #fff3e0; border-left: 5px solid #e65100; }
-    .footer {
-      text-align: center;
-      color: #999;
-      font-size: 0.8rem;
-      margin-top: 30px;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/hydroabyss-core.css">
+  <link rel="stylesheet" href="assets/css/diagramas.css">
 </head>
 <body>
 
-<h1>Organización Marítima Internacional (OMI / IMO)</h1>
-<h2>Estructura de Convenios, Códigos y Protocolos — con Conceptos Clave</h2>
+<div class="top-bar">
+  <a href="index.html">← Volver a Diagramas HydroAbyss</a>
+</div>
 
+<main class="main-container">
+
+<span class="tag-telemetry docs-kicker">Mapa normativo</span>
+<h1>Organizaci&oacute;n Mar&iacute;tima Internacional (OMI / IMO)</h1>
+<p class="subtitle">Estructura de convenios, c&oacute;digos y protocolos con conceptos clave para formaci&oacute;n mar&iacute;tima.</p>
+
+<div class="docs-panel diagram-shell" style="margin-top:24px;">
 <div class="mermaid">
 graph TD
     IMO["🏛️ <b>IMO</b><br/>Organización Marítima Internacional<br/><i>Establecida 1948 · Sede: Londres<br/>175 Estados miembros</i>"]
@@ -82,10 +38,6 @@ graph TD
     CONSEJO ==>|"derecho marítimo"| LEG["⚖️ <b>Comité Jurídico</b><br/><i>Responsabilidad y<br/>compensación</i>"]
     CONSEJO -->|"formación países<br/>en desarrollo"| TC["🎓 Comité de<br/>Cooperación Técnica"]
     CONSEJO -->|"simplificación<br/>trámites"| FAL["📄 Comité de<br/>Facilitación"]
-
-    %% ═══════════════════════════════════════
-    %% CONVENIOS PRINCIPALES con conectores descriptivos
-    %% ═══════════════════════════════════════
 
     MSC ==>|"Convenio más importante<br/>de seguridad marítima"| SOLAS["🛡️ <b>SOLAS 1974</b><br/>Seguridad de la Vida<br/>Humana en el Mar<br/><i>14 capítulos · Obligatorio</i>"]
 
@@ -109,7 +61,7 @@ graph TD
 
     LEG -->|"Límite máximo de<br/>indemnización"| LLMC["📏 <b>LLMC 1976/96</b><br/>Limitación de<br/>Responsabilidad<br/><i>Basado en GT del buque</i>"]
 
-    %% ── Subcapítulos SOLAS con conectores ──
+    %% ── Subcapítulos SOLAS ──
     SOLAS ==>|"estructura"| SOLAS_CAP["<b>14 Capítulos SOLAS</b>"]
     SOLAS_CAP -->|"Estructura y<br/>estabilidad"| CAP_II["<b>Cap. II-1/II-2</b><br/>Construcción · Compartimentado<br/>Estabilidad · Protección<br/>contra incendios"]
     SOLAS_CAP -->|"Botes, balsas,<br/>chalecos"| CAP_III["<b>Cap. III</b><br/>Dispositivos de<br/>Salvamento"]
@@ -118,12 +70,11 @@ graph TD
     SOLAS_CAP -->|"Gestión de la<br/>seguridad"| CAP_IX["<b>Cap. IX</b><br/>Código IGS / ISM<br/><i>SMS obligatorio</i>"]
     SOLAS_CAP -->|"Protección<br/>post 11-S"| CAP_XI["<b>Cap. XI-2</b><br/>Medidas especiales<br/>de protección marítima"]
 
-    %% ── Relaciones cruzadas SOLAS ↔ otros ──
     CAP_IX -.-|"Implementa"| ISPS
     CAP_III -.-|"Detalla"| LSA
     CAP_V -.-|"Requiere competencias"| STCW
 
-    %% ── Anexos MARPOL con conectores ──
+    %% ── Anexos MARPOL ──
     MARPOL ==>|"6 anexos<br/>técnicos"| ANEXOS_M["<b>Anexos MARPOL</b>"]
     ANEXOS_M -->|"Crudo y derivados<br/>SOPEP · Libro registro"| ANX_I["<b>Anexo I</b><br/>Hidrocarburos<br/><i>Zonas especiales:<br/>Mediterráneo, Báltico...</i>"]
     ANEXOS_M -->|"Químicos líquidos<br/>Categorías X,Y,Z,OS"| ANX_II["<b>Anexo II</b><br/>Sustancias Nocivas<br/>Líquidas a Granel"]
@@ -138,7 +89,6 @@ graph TD
     STCW_COD -->|"Guía de<br/>implementación"| PARTE_B["<b>Parte B</b><br/><i>Orientación recomendada<br/>Criterios de evaluación</i>"]
     STCW_COD -->|"Material didáctico<br/>estandarizado"| CURSOS_M["<b>Cursos Modelo IMO</b><br/>1.19 FBSM · 1.20 FSEI<br/>1.21 PSM · 1.29 BP<br/>2.03 ISPS · 7.04 OR"]
 
-    %% ── Relación STCW → funciones ──
     PARTE_A -->|"Define 7 funciones"| FUNCIONES["<b>Funciones STCW</b><br/>1. Navegación<br/>2. Manejo de carga<br/>3. Control del buque<br/>4. Ing. mecánica/eléctrica<br/>5. Mantenimiento y reparación<br/>6. Radiocomunicaciones<br/>7. Protección marítima"]
 
     %% ── Otros códigos ──
@@ -155,17 +105,15 @@ graph TD
     COLREG -.-|"Navegante competente<br/>según STCW"| STCW
     MARPOL -.-|"Buque seguro<br/>según SOLAS"| SOLAS
 
-    %% ═══════════════════════════════════════
-    %% ESTILOS
-    %% ═══════════════════════════════════════
-    classDef imo fill:#0b3d91,stroke:#072a6b,color:#fff,font-size:14px
-    classDef comite fill:#1a6bb5,stroke:#0f4c81,color:#fff
-    classDef convenio fill:#e8f4fd,stroke:#1a6bb5,color:#0b3d91,font-size:12px
+    %% ── ESTILOS (tema púrpura HydroAbyss) ──
+    classDef imo fill:#2f1c6a,stroke:#1F1346,color:#fff,font-size:14px
+    classDef comite fill:#5025d1,stroke:#3b1997,color:#fff
+    classDef convenio fill:#ebe4ff,stroke:#673de6,color:#2f1c6a,font-size:12px
     classDef codigo fill:#fff3e0,stroke:#e65100,color:#bf360c,font-size:11px
-    classDef anexo fill:#e8f5e9,stroke:#2e7d32,color:#1b5e20,font-size:11px
-    classDef organo fill:#f3e5f5,stroke:#7b1fa2,color:#4a148c
-    classDef mision fill:#e0f7fa,stroke:#00838f,color:#004d40,font-size:12px
-    classDef funcion fill:#fce4ec,stroke:#c62828,color:#b71c1c,font-size:11px
+    classDef anexo fill:#def4f0,stroke:#00b090,color:#006b57,font-size:11px
+    classDef organo fill:#d5dfff,stroke:#8c85ff,color:#2f1c6a
+    classDef mision fill:#e0f7fa,stroke:#00b090,color:#004d40,font-size:12px
+    classDef funcion fill:#ffe8ef,stroke:#fc5185,color:#d63163,font-size:11px
 
     class IMO imo
     class MSC,MEPC,LEG,TC,FAL comite
@@ -178,116 +126,112 @@ graph TD
     class MISION mision
     class FUNCIONES funcion
 </div>
+</div>
 
-<!-- ═══════════════════════════════════════ -->
-<!-- TARJETAS DE CONCEPTOS CLAVE            -->
-<!-- ═══════════════════════════════════════ -->
-
-<h2 style="margin-top:50px;">Conceptos Clave de la IMO y sus Principales Convenios</h2>
+<h2 class="section-title">Conceptos clave de la IMO y sus principales convenios</h2>
 
 <div class="conceptos">
 
   <div class="concepto-card card-imo">
-    <h3>🏛️ IMO — Organización Marítima Internacional</h3>
-    <p>Agencia especializada de las Naciones Unidas responsable de la seguridad y protección del transporte marítimo y la prevención de la contaminación marina por los buques.</p>
+    <h3>🏛️ IMO — Organizaci&oacute;n Mar&iacute;tima Internacional</h3>
+    <p>Agencia especializada de las Naciones Unidas responsable de la seguridad y protecci&oacute;n del transporte mar&iacute;timo y la prevenci&oacute;n de la contaminaci&oacute;n marina por los buques.</p>
     <ul>
-      <li><b>Fundación:</b> Convenio constitutivo de 1948, en vigor desde 1958</li>
+      <li><b>Fundaci&oacute;n:</b> Convenio constitutivo de 1948, en vigor desde 1958</li>
       <li><b>Sede:</b> Londres, Reino Unido</li>
       <li><b>Miembros:</b> 175 Estados + 3 miembros asociados</li>
-      <li><b>Principio rector:</b> "Navegación segura, mares limpios, gente de mar competente"</li>
-      <li><b>Instrumentos:</b> Adopta convenios, códigos, directrices y resoluciones vinculantes</li>
-      <li><b>Enmiendas:</b> Procedimiento de aceptación tácita (entran en vigor salvo que 1/3 de los Estados se opongan)</li>
+      <li><b>Principio rector:</b> &laquo;Navegaci&oacute;n segura, mares limpios, gente de mar competente&raquo;</li>
+      <li><b>Instrumentos:</b> Adopta convenios, c&oacute;digos, directrices y resoluciones vinculantes</li>
+      <li><b>Enmiendas:</b> Procedimiento de aceptaci&oacute;n t&aacute;cita</li>
     </ul>
   </div>
 
   <div class="concepto-card card-solas">
     <h3>🛡️ SOLAS — Seguridad de la Vida Humana en el Mar</h3>
-    <p>El tratado internacional de seguridad marítima más importante. Su origen se remonta al hundimiento del <i>Titanic</i> (1912). La versión actual es de 1974, con el Protocolo de 1988 y enmiendas continuas.</p>
+    <p>El tratado internacional de seguridad mar&iacute;tima m&aacute;s importante. Su origen se remonta al hundimiento del <i>Titanic</i> (1912). Versi&oacute;n actual: 1974 con Protocolo 1988 y enmiendas continuas.</p>
     <ul>
-      <li><b>Objetivo:</b> Establecer normas mínimas de construcción, equipamiento y operación de buques</li>
-      <li><b>Alcance:</b> Buques en viajes internacionales (excluye buques de guerra, pesca, madera &lt;500 GT)</li>
-      <li><b>Estructura:</b> 14 capítulos — construcción, incendios, salvamento, radiocomunicaciones, navegación, cargas, nucleares, gestión de seguridad (ISM), protección (ISPS)</li>
-      <li><b>Certificados:</b> Certificado de Seguridad del Buque de Pasaje, de Construcción, de Equipo, de Seguridad Radioeléctrica</li>
-      <li><b>Control:</b> Inspección del Estado Rector del Puerto (Port State Control)</li>
+      <li><b>Objetivo:</b> Normas m&iacute;nimas de construcci&oacute;n, equipamiento y operaci&oacute;n de buques</li>
+      <li><b>Alcance:</b> Buques en viajes internacionales</li>
+      <li><b>Estructura:</b> 14 cap&iacute;tulos</li>
+      <li><b>Certificados:</b> Seguridad del Buque de Pasaje, de Construcci&oacute;n, de Equipo, Radioel&eacute;ctrica</li>
+      <li><b>Control:</b> Port State Control (PSC)</li>
     </ul>
   </div>
 
   <div class="concepto-card card-marpol">
-    <h3>🌊 MARPOL 73/78 — Prevención de la Contaminación</h3>
-    <p>Principal convenio internacional para prevenir la contaminación del medio marino causada por los buques, tanto en su operación normal como por accidentes.</p>
+    <h3>🌊 MARPOL 73/78 — Prevenci&oacute;n de la Contaminaci&oacute;n</h3>
+    <p>Principal convenio para prevenir la contaminaci&oacute;n del medio marino causada por buques.</p>
     <ul>
-      <li><b>Nombre completo:</b> Convenio Internacional para Prevenir la Contaminación por los Buques (1973, modificado por Protocolo de 1978)</li>
-      <li><b>6 Anexos técnicos:</b> Hidrocarburos (I), Químicos líquidos (II), Bultos (III), Aguas sucias (IV), Basuras (V), Emisiones atmosféricas (VI)</li>
-      <li><b>Zonas especiales:</b> Áreas con restricciones reforzadas — Mediterráneo, Báltico, Mar del Norte, Caribe, Mar Rojo</li>
-      <li><b>ECA:</b> Áreas de Control de Emisiones con límites más estrictos de SOx y NOx</li>
-      <li><b>Hito 2020:</b> Límite global de azufre reducido al 0.50% (antes 3.50%)</li>
-      <li><b>Descarbonización:</b> Estrategia IMO para reducir emisiones GEI un 50% para 2050</li>
+      <li><b>6 Anexos:</b> Hidrocarburos (I), Qu&iacute;micos l&iacute;quidos (II), Bultos (III), Aguas sucias (IV), Basuras (V), Emisiones (VI)</li>
+      <li><b>Zonas especiales:</b> Mediterr&aacute;neo, B&aacute;ltico, Mar del Norte, Caribe, Mar Rojo</li>
+      <li><b>ECA:</b> &Aacute;reas de Control de Emisiones con l&iacute;mites estrictos de SOx y NOx</li>
+      <li><b>Hito 2020:</b> L&iacute;mite global de azufre al 0.50%</li>
+      <li><b>Descarbonizaci&oacute;n:</b> Estrategia IMO para reducir GEI un 50% para 2050</li>
     </ul>
   </div>
 
   <div class="concepto-card card-stcw">
-    <h3>📚 STCW — Formación, Titulación y Guardia</h3>
-    <p>Establece las normas internacionales mínimas de formación, titulación y guardia para la gente de mar. Es la base legal de todos los cursos que imparte HydroAbyss.</p>
+    <h3>📚 STCW — Formaci&oacute;n, Titulaci&oacute;n y Guardia</h3>
+    <p>Normas internacionales m&iacute;nimas de formaci&oacute;n para la gente de mar. Base legal de todos los cursos de HydroAbyss.</p>
     <ul>
-      <li><b>Origen:</b> Adoptado en 1978, revisión mayor en 1995 y Enmiendas de Manila 2010</li>
-      <li><b>Código STCW:</b> Parte A (obligatoria — tablas de competencia) + Parte B (orientación recomendada)</li>
-      <li><b>7 Funciones:</b> Navegación, Carga, Control del buque, Ingeniería, Mantenimiento, Radiocomunicaciones, Protección</li>
-      <li><b>3 Niveles:</b> Apoyo, Operacional, Dirección</li>
-      <li><b>Cursos Modelo IMO:</b> Material estandarizado para formación (1.19 FBSM, 1.20 FSEI, 1.21 PSM, 1.29 BP, etc.)</li>
-      <li><b>Certificados:</b> Cada Estado expide títulos profesionales alineados con las tablas del Código</li>
+      <li><b>Origen:</b> 1978, revisi&oacute;n 1995, Enmiendas de Manila 2010</li>
+      <li><b>C&oacute;digo:</b> Parte A (obligatoria) + Parte B (recomendada)</li>
+      <li><b>7 Funciones:</b> Navegaci&oacute;n, Carga, Control, Ingenier&iacute;a, Mantenimiento, Radio, Protecci&oacute;n</li>
+      <li><b>3 Niveles:</b> Apoyo, Operacional, Direcci&oacute;n</li>
+      <li><b>Cursos Modelo:</b> 1.19 FBSM, 1.20 FSEI, 1.21 PSM, 1.29 BP</li>
     </ul>
   </div>
 
   <div class="concepto-card card-colreg">
     <h3>🚦 COLREG — Reglamento para Prevenir Abordajes</h3>
-    <p>Las "reglas de tráfico del mar". Establece las normas de navegación, luces, marcas y señales que todo navegante debe conocer.</p>
+    <p>Las &laquo;reglas de tr&aacute;fico del mar&raquo;. Normas de navegaci&oacute;n, luces, marcas y se&ntilde;ales.</p>
     <ul>
-      <li><b>Estructura:</b> 38 Reglas en 5 Partes + 4 Anexos técnicos</li>
-      <li><b>Parte A:</b> Ámbito de aplicación (Reglas 1-3)</li>
-      <li><b>Parte B:</b> Rumbo y gobierno — situaciones de cruce, alcance, vuelta encontrada (Reglas 4-19)</li>
-      <li><b>Parte C:</b> Luces y marcas (Reglas 20-31)</li>
-      <li><b>Parte D:</b> Señales acústicas y luminosas (Reglas 32-37)</li>
-      <li><b>Regla 5:</b> Vigilancia permanente — una de las reglas más citadas en investigaciones de accidentes</li>
+      <li><b>Estructura:</b> 38 Reglas en 5 Partes + 4 Anexos</li>
+      <li><b>Parte B:</b> Rumbo y gobierno (cruce, alcance, vuelta encontrada)</li>
+      <li><b>Parte C:</b> Luces y marcas</li>
+      <li><b>Parte D:</b> Se&ntilde;ales ac&uacute;sticas y luminosas</li>
+      <li><b>Regla 5:</b> Vigilancia permanente — la m&aacute;s citada en investigaciones</li>
     </ul>
   </div>
 
   <div class="concepto-card card-sar">
-    <h3>🆘 SAR — Búsqueda y Salvamento</h3>
-    <p>Establece un plan internacional de búsqueda y salvamento marítimo, dividiendo los océanos en zonas SAR con centros de coordinación (MRCC) asignados.</p>
+    <h3>🆘 SAR — B&uacute;squeda y Salvamento</h3>
+    <p>Plan internacional de b&uacute;squeda y salvamento, dividiendo oc&eacute;anos en zonas SAR con centros MRCC.</p>
     <ul>
-      <li><b>Complemento:</b> Manual IAMSAR (3 volúmenes) — organización, coordinación, medios móviles</li>
-      <li><b>SRR:</b> Regiones de Búsqueda y Salvamento asignadas a cada Estado costero</li>
-      <li><b>Relación con SOLAS:</b> SOLAS Cap. V obliga al capitán a prestar auxilio a personas en peligro en el mar</li>
+      <li><b>Complemento:</b> Manual IAMSAR (3 vol&uacute;menes)</li>
+      <li><b>SRR:</b> Regiones asignadas a cada Estado costero</li>
+      <li><b>SOLAS:</b> Cap. V obliga a prestar auxilio a personas en peligro</li>
     </ul>
   </div>
 
   <div class="concepto-card card-isps">
-    <h3>🔒 ISPS — Protección de Buques e Instalaciones Portuarias</h3>
-    <p>Código adoptado tras los atentados del 11-S para proteger el transporte marítimo contra actos ilícitos deliberados (terrorismo, piratería, polizones).</p>
+    <h3>🔒 ISPS — Protecci&oacute;n de Buques e Instalaciones Portuarias</h3>
+    <p>C&oacute;digo post 11-S para proteger el transporte mar&iacute;timo contra actos il&iacute;citos.</p>
     <ul>
-      <li><b>Implementación:</b> A través de SOLAS Cap. XI-2, obligatorio desde julio 2004</li>
-      <li><b>3 Niveles de protección:</b> Normal (1), Reforzado (2), Excepcional (3)</li>
-      <li><b>Figuras clave:</b> PFSO (Oficial de Protección de la Instalación), SSO (Oficial de Protección del Buque), CSO (Oficial de la Compañía)</li>
-      <li><b>Plan de Protección:</b> Cada buque e instalación portuaria debe tener su plan aprobado</li>
+      <li><b>Implementaci&oacute;n:</b> SOLAS Cap. XI-2, obligatorio desde julio 2004</li>
+      <li><b>3 Niveles:</b> Normal (1), Reforzado (2), Excepcional (3)</li>
+      <li><b>Figuras:</b> PFSO, SSO, CSO</li>
+      <li><b>Plan:</b> Cada buque e instalaci&oacute;n debe tener plan aprobado</li>
     </ul>
   </div>
 
   <div class="concepto-card card-imdg">
-    <h3>☢️ IMDG — Código de Mercancías Peligrosas</h3>
-    <p>Regula el transporte seguro de mercancías peligrosas por vía marítima. Clasifica las sustancias en 9 clases según su peligrosidad.</p>
+    <h3>☢️ IMDG — C&oacute;digo de Mercanc&iacute;as Peligrosas</h3>
+    <p>Regula el transporte seguro de mercanc&iacute;as peligrosas por v&iacute;a mar&iacute;tima. 9 clases de peligrosidad.</p>
     <ul>
-      <li><b>9 Clases:</b> 1-Explosivos, 2-Gases, 3-Líquidos inflamables, 4-Sólidos inflamables, 5-Oxidantes, 6-Tóxicos, 7-Radiactivos, 8-Corrosivos, 9-Otros</li>
-      <li><b>Contenido:</b> Clasificación, embalaje/envase, marcado, etiquetado, rotulación, documentación, estiba y segregación</li>
-      <li><b>Obligatorio:</b> Desde 2004 (enmienda 32), antes era recomendatorio</li>
-      <li><b>Actualización:</b> Se revisa cada 2 años (edición actual: Enmienda 42-24)</li>
+      <li><b>9 Clases:</b> Explosivos, Gases, L&iacute;quidos inflamables, S&oacute;lidos inflamables, Oxidantes, T&oacute;xicos, Radiactivos, Corrosivos, Otros</li>
+      <li><b>Contenido:</b> Clasificaci&oacute;n, embalaje, marcado, etiquetado, estiba y segregaci&oacute;n</li>
+      <li><b>Obligatorio:</b> Desde 2004</li>
+      <li><b>Actualizaci&oacute;n:</b> Cada 2 a&ntilde;os</li>
     </ul>
   </div>
 
 </div>
 
 <div class="footer">
-  HydroAbyss — Generador de Manuales STCW · Diagrama de prueba generado automáticamente · Marzo 2026
+  <a href="https://hydroabyss.com" target="_blank">HydroAbyss</a> — Generador de Manuales STCW · Marzo 2026
 </div>
+
+</main>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script>
@@ -295,10 +239,14 @@ graph TD
     startOnLoad: true,
     theme: 'base',
     themeVariables: {
-      primaryColor: '#e8f4fd',
-      primaryBorderColor: '#1a6bb5',
-      lineColor: '#1a6bb5',
-      fontSize: '12px'
+      primaryColor: '#081a2d',
+      primaryBorderColor: '#00d4ff',
+      primaryTextColor: '#e8f4f8',
+      secondaryColor: '#0a1e30',
+      tertiaryColor: '#061525',
+      lineColor: '#00d4ff',
+      fontSize: '12px',
+      fontFamily: 'Inter, sans-serif'
     },
     flowchart: {
       htmlLabels: true,

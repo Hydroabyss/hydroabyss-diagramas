@@ -2,6 +2,11 @@
   padding-top: 140px;
 }
 
+.sim-note-grid {
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  margin-top: 24px;
+}
+
 .sim-grid {
   display: grid;
   grid-template-columns: minmax(240px, 280px) minmax(280px, 360px) minmax(320px, 1fr) minmax(280px, 380px);
@@ -284,6 +289,7 @@
     padding-top: 120px;
   }
 
+  .sim-note-grid,
   .sim-grid {
     grid-template-columns: 1fr;
   }

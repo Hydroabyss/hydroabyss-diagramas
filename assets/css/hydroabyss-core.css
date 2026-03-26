@@ -10,10 +10,22 @@
   --cyan: #00d4ff;
   --blue: #0070f3;
   --teal: #00b4d8;
+  --primary: var(--cyan);
+  --primary-dark: var(--blue);
+  --meteorite-dark: var(--bg2);
+  --meteorite: #7acbff;
+  --meteorite-light: #d8f1ff;
+  --primary-light: rgba(0, 212, 255, 0.12);
+  --success: #00b090;
+  --danger: #fc5185;
+  --warning: #ffcd35;
+  --azure: #357df9;
 
   --white: #e8f4f8;
   --white-strong: #f0f8ff;
   --gray: #7a9bb5;
+  --gray-border: rgba(255, 255, 255, 0.12);
+  --gray-light: rgba(3, 13, 26, 0.78);
 
   --border: rgba(0, 212, 255, 0.18);
   --border-strong: rgba(0, 212, 255, 0.32);
