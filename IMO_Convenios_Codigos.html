@@ -27,113 +27,12 @@
 <h1>Organizaci&oacute;n Mar&iacute;tima Internacional (OMI / IMO)</h1>
 <p class="subtitle">Estructura de convenios, c&oacute;digos y protocolos con conceptos clave para formaci&oacute;n mar&iacute;tima.</p>
 
-<div class="docs-panel diagram-shell" style="margin-top:24px;">
-<div class="mermaid">
-graph TD
-    IMO["🏛️ <b>IMO</b><br/>Organización Marítima Internacional<br/><i>Establecida 1948 · Sede: Londres<br/>175 Estados miembros</i>"]
-
-    %% ── Misión ──
-    IMO -.->|"Misión: navegación segura,<br/>protección del medio marino,<br/>eficiencia del transporte"| MISION(["🌍 Navegación segura · Mares limpios · Gente de mar competente"])
-
-    %% ── Órganos principales ──
-    IMO ==>|"gobierna"| ASAMBLEA["📋 <b>Asamblea</b><br/><i>Órgano supremo · Se reúne cada 2 años<br/>Aprueba presupuesto y resoluciones</i>"]
-    IMO ==>|"dirige"| CONSEJO["🏢 <b>Consejo</b><br/><i>Órgano ejecutivo · 40 miembros<br/>Supervisa entre sesiones de Asamblea</i>"]
-    IMO ==>|"administra"| SECRETARIA["📝 <b>Secretaría General</b><br/><i>Coordina trabajo técnico<br/>~300 funcionarios internacionales</i>"]
-
-    %% ── Comités ──
-    CONSEJO ==>|"seguridad"| MSC["⚓ <b>MSC</b><br/>Comité de Seguridad<br/>Marítima<br/><i>Comité técnico principal</i>"]
-    CONSEJO ==>|"medio ambiente"| MEPC["🌿 <b>MEPC</b><br/>Comité de Protección<br/>del Medio Marino"]
-    CONSEJO ==>|"derecho marítimo"| LEG["⚖️ <b>Comité Jurídico</b><br/><i>Responsabilidad y<br/>compensación</i>"]
-    CONSEJO -->|"formación países<br/>en desarrollo"| TC["🎓 Comité de<br/>Cooperación Técnica"]
-    CONSEJO -->|"simplificación<br/>trámites"| FAL["📄 Comité de<br/>Facilitación"]
-
-    MSC ==>|"Convenio más importante<br/>de seguridad marítima"| SOLAS["🛡️ <b>SOLAS 1974</b><br/>Seguridad de la Vida<br/>Humana en el Mar<br/><i>14 capítulos · Obligatorio</i>"]
-
-    MSC ==>|"Competencia<br/>profesional marítima"| STCW["📚 <b>STCW 1978/2010</b><br/>Formación, Titulación<br/>y Guardia<br/><i>Enmiendas de Manila 2010</i>"]
-
-    MSC ==>|"Reglas de tráfico<br/>marítimo"| COLREG["🚦 <b>COLREG 1972</b><br/>Reglamento Internacional<br/>para Prevenir Abordajes<br/><i>38 Reglas + 4 Anexos</i>"]
-
-    MSC -->|"Coordinación<br/>rescate en el mar"| SAR["🆘 <b>SAR 1979</b><br/>Búsqueda y<br/>Salvamento<br/><i>Plan mundial SAR</i>"]
-
-    MSC -->|"Protección contra<br/>actos ilícitos"| ISPS["🔒 <b>Código PBIP / ISPS</b><br/>Protección de Buques<br/>e Instalaciones Portuarias<br/><i>Post 11-S · Obligatorio 2004</i>"]
-
-    MEPC ==>|"Convenio ambiental<br/>más completo"| MARPOL["🌊 <b>MARPOL 73/78</b><br/>Prevención de la<br/>Contaminación por Buques<br/><i>6 Anexos técnicos</i>"]
-
-    MEPC -->|"Especies invasoras<br/>por agua de lastre"| BWM["🦠 <b>BWM 2004</b><br/>Gestión del Agua<br/>de Lastre<br/><i>En vigor desde 2017</i>"]
-
-    MEPC -->|"Pinturas tóxicas<br/>antifouling"| AFS["🎨 <b>AFS 2001</b><br/>Sistemas<br/>Antiincrustantes<br/><i>Prohíbe TBT</i>"]
-
-    LEG -->|"¿Quién paga los<br/>daños por vertidos?"| CLC["💰 <b>CLC 1969/92</b><br/>Responsabilidad Civil<br/>Hidrocarburos<br/><i>Responsabilidad objetiva<br/>del armador</i>"]
-
-    LEG -->|"Fondo complementario<br/>cuando CLC no alcanza"| FUND["🏦 <b>FUND 1992</b><br/>Fondo Internacional<br/>de Indemnización<br/><i>Financiado por receptores<br/>de crudo</i>"]
-
-    LEG -->|"Límite máximo de<br/>indemnización"| LLMC["📏 <b>LLMC 1976/96</b><br/>Limitación de<br/>Responsabilidad<br/><i>Basado en GT del buque</i>"]
-
-    %% ── Subcapítulos SOLAS ──
-    SOLAS ==>|"estructura"| SOLAS_CAP["<b>14 Capítulos SOLAS</b>"]
-    SOLAS_CAP -->|"Estructura y<br/>estabilidad"| CAP_II["<b>Cap. II-1/II-2</b><br/>Construcción · Compartimentado<br/>Estabilidad · Protección<br/>contra incendios"]
-    SOLAS_CAP -->|"Botes, balsas,<br/>chalecos"| CAP_III["<b>Cap. III</b><br/>Dispositivos de<br/>Salvamento"]
-    SOLAS_CAP -->|"SMSSM"| CAP_IV["<b>Cap. IV</b><br/>Radiocomunicaciones<br/><i>GMDSS obligatorio</i>"]
-    SOLAS_CAP -->|"Cartas, AIS,<br/>VDR, ECDIS"| CAP_V["<b>Cap. V</b><br/>Seguridad de<br/>la Navegación"]
-    SOLAS_CAP -->|"Gestión de la<br/>seguridad"| CAP_IX["<b>Cap. IX</b><br/>Código IGS / ISM<br/><i>SMS obligatorio</i>"]
-    SOLAS_CAP -->|"Protección<br/>post 11-S"| CAP_XI["<b>Cap. XI-2</b><br/>Medidas especiales<br/>de protección marítima"]
-
-    CAP_IX -.-|"Implementa"| ISPS
-    CAP_III -.-|"Detalla"| LSA
-    CAP_V -.-|"Requiere competencias"| STCW
-
-    %% ── Anexos MARPOL ──
-    MARPOL ==>|"6 anexos<br/>técnicos"| ANEXOS_M["<b>Anexos MARPOL</b>"]
-    ANEXOS_M -->|"Crudo y derivados<br/>SOPEP · Libro registro"| ANX_I["<b>Anexo I</b><br/>Hidrocarburos<br/><i>Zonas especiales:<br/>Mediterráneo, Báltico...</i>"]
-    ANEXOS_M -->|"Químicos líquidos<br/>Categorías X,Y,Z,OS"| ANX_II["<b>Anexo II</b><br/>Sustancias Nocivas<br/>Líquidas a Granel"]
-    ANEXOS_M -->|"Embalaje,<br/>marcado, etiquetado"| ANX_III["<b>Anexo III</b><br/>Sustancias Perjudiciales<br/>en Bultos"]
-    ANEXOS_M -->|"Tratamiento de<br/>aguas fecales"| ANX_IV["<b>Anexo IV</b><br/>Aguas Sucias"]
-    ANEXOS_M -->|"Gestión integral<br/>de residuos a bordo"| ANX_V["<b>Anexo V</b><br/>Basuras<br/><i>Prohibición general<br/>de vertidos</i>"]
-    ANEXOS_M -->|"SOx, NOx, CO2<br/>ECA · EEDI · CII"| ANX_VI["<b>Anexo VI</b><br/>Contaminación<br/>Atmosférica<br/><i>Límite azufre 0.50%<br/>desde 2020</i>"]
-
-    %% ── STCW estructura ──
-    STCW ==>|"Parte obligatoria<br/>y recomendada"| STCW_COD["<b>Código STCW</b>"]
-    STCW_COD -->|"Requisitos mínimos<br/>de competencia"| PARTE_A["<b>Parte A</b><br/><i>Normas obligatorias<br/>Tablas de competencias<br/>por función y nivel</i>"]
-    STCW_COD -->|"Guía de<br/>implementación"| PARTE_B["<b>Parte B</b><br/><i>Orientación recomendada<br/>Criterios de evaluación</i>"]
-    STCW_COD -->|"Material didáctico<br/>estandarizado"| CURSOS_M["<b>Cursos Modelo IMO</b><br/>1.19 FBSM · 1.20 FSEI<br/>1.21 PSM · 1.29 BP<br/>2.03 ISPS · 7.04 OR"]
-
-    PARTE_A -->|"Define 7 funciones"| FUNCIONES["<b>Funciones STCW</b><br/>1. Navegación<br/>2. Manejo de carga<br/>3. Control del buque<br/>4. Ing. mecánica/eléctrica<br/>5. Mantenimiento y reparación<br/>6. Radiocomunicaciones<br/>7. Protección marítima"]
-
-    %% ── Otros códigos ──
-    MSC ==>|"Códigos técnicos<br/>obligatorios"| OTROS["<b>Códigos Asociados</b>"]
-    OTROS -->|"9 clases de<br/>mercancías peligrosas"| IMDG["☢️ <b>Código IMDG</b><br/>Mercancías Peligrosas<br/><i>Clasificación · Embalaje<br/>Estiba · Segregación</i>"]
-    OTROS -->|"GNL, GPL<br/>y gases licuados"| IGC["❄️ <b>Código IGC</b><br/>Gaseros<br/><i>Tipos de tanques<br/>1, 2, 3, membrana</i>"]
-    OTROS -->|"Productos químicos<br/>a granel"| IBC["🧪 <b>Código IBC</b><br/>Graneles Químicos<br/><i>Lista de productos<br/>y requisitos</i>"]
-    OTROS -->|"Navegación en<br/>Ártico y Antártico"| POLAR["🧊 <b>Código Polar</b><br/>Aguas Polares<br/><i>En vigor 2017<br/>Categorías A, B, C</i>"]
-    OTROS -->|"Especificaciones<br/>equipos salvamento"| LSA["🛟 <b>Código LSA</b><br/>Dispositivos de<br/>Salvamento"]
-    OTROS -->|"CI y detección<br/>de incendios"| FSS["🔥 <b>Código FSS</b><br/>Sistemas contra<br/>Incendios"]
-
-    %% ── Relaciones cruzadas ──
-    IMDG -.-|"Complementa"| ANX_III
-    COLREG -.-|"Navegante competente<br/>según STCW"| STCW
-    MARPOL -.-|"Buque seguro<br/>según SOLAS"| SOLAS
-
-    %% ── ESTILOS (tema púrpura HydroAbyss) ──
-    classDef imo fill:#2f1c6a,stroke:#1F1346,color:#fff,font-size:14px
-    classDef comite fill:#5025d1,stroke:#3b1997,color:#fff
-    classDef convenio fill:#ebe4ff,stroke:#673de6,color:#2f1c6a,font-size:12px
-    classDef codigo fill:#fff3e0,stroke:#e65100,color:#bf360c,font-size:11px
-    classDef anexo fill:#def4f0,stroke:#00b090,color:#006b57,font-size:11px
-    classDef organo fill:#d5dfff,stroke:#8c85ff,color:#2f1c6a
-    classDef mision fill:#e0f7fa,stroke:#00b090,color:#004d40,font-size:12px
-    classDef funcion fill:#ffe8ef,stroke:#fc5185,color:#d63163,font-size:11px
-
-    class IMO imo
-    class MSC,MEPC,LEG,TC,FAL comite
-    class ASAMBLEA,CONSEJO,SECRETARIA organo
-    class SOLAS,STCW,COLREG,SAR,ISPS,MARPOL,BWM,AFS,CLC,FUND,LLMC convenio
-    class IMDG,IGC,IBC,POLAR,LSA,FSS,CAP_II,CAP_III,CAP_IV,CAP_V,CAP_IX,CAP_XI codigo
-    class ANX_I,ANX_II,ANX_III,ANX_IV,ANX_V,ANX_VI anexo
-    class PARTE_A,PARTE_B,CURSOS_M codigo
-    class SOLAS_CAP,ANEXOS_M,STCW_COD,OTROS convenio
-    class MISION mision
-    class FUNCIONES funcion
-</div>
+<div class="docs-panel diagram-shell" role="region" aria-label="Diagrama de relaciones de la OMI, sus órganos, convenios y códigos" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 5319px;">
+    <img class="diagram-image" src="assets/diagrams/imo-es.svg" width="5319" height="2403" alt="Diagrama completo de la OMI: Asamblea, Consejo y Secretaría; el Consejo relaciona los comités MSC, MEPC, Jurídico, de Cooperación Técnica y de Facilitación con convenios, códigos y anexos.">
+    <figcaption class="diagram-caption"><strong>Mapa normativo de la OMI.</strong> <a href="assets/diagrams/imo-es.svg" target="_blank" rel="noopener">Abrir diagrama ampliado</a></figcaption>
+    <details class="diagram-alternative"><summary>Relaciones explicadas en HTML</summary><p>La OMI se relaciona con la Asamblea, el Consejo y la Secretaría. El Consejo coordina los comités MSC, MEPC, Jurídico, de Cooperación Técnica y de Facilitación. El MSC conecta con SOLAS, STCW, COLREG, SAR, ISPS y códigos técnicos; el MEPC con MARPOL, BWM y AFS; y el Comité Jurídico con CLC, FUND y LLMC. SOLAS se despliega en capítulos y MARPOL en seis anexos; STCW se relaciona con su Código, sus funciones y los cursos modelo.</p></details>
+  </figure>
 </div>
 
 <h2 class="section-title">Conceptos clave de la IMO y sus principales convenios</h2>
@@ -173,7 +72,7 @@ graph TD
       <li><b>Zonas especiales:</b> Mediterr&aacute;neo, B&aacute;ltico, Mar del Norte, Caribe, Mar Rojo</li>
       <li><b>ECA:</b> &Aacute;reas de Control de Emisiones con l&iacute;mites estrictos de SOx y NOx</li>
       <li><b>Hito 2020:</b> L&iacute;mite global de azufre al 0.50%</li>
-      <li><b>Descarbonizaci&oacute;n:</b> Estrategia IMO para reducir GEI un 50% para 2050</li>
+      <li><b>Descarbonizaci&oacute;n:</b> La estrategia IMO de 2023 fija como ambición alcanzar emisiones netas cero de GEI del transporte marítimo internacional hacia 2050.</li>
     </ul>
   </div>
 
@@ -240,30 +139,5 @@ graph TD
 </div>
 
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      lineColor: '#00d4ff',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif'
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 55,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>

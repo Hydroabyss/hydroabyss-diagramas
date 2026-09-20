@@ -55,18 +55,12 @@
 
 <h2 class="section-title">Cadeia causal</h2>
 
-<div class="docs-panel diagram-shell">
-<div class="mermaid">
-flowchart TD
-    A[Derrota aprovada] --> B[Desvio deliberado inchino]
-    B --> C[Aproximação costeira insegura a 15,5 kn]
-    C --> D[Manobra tardia perto de Le Scole]
-    D --> E[Brecha no casco e blackout]
-    E --> F[Reconhecimento tardio da emergência]
-    F --> G[Ordem tardia de abandono]
-    G --> H[Banda severa e botes inutilizáveis]
-    H --> I[Evacuação caótica e vítimas]
-</div>
+<div class="docs-panel diagram-shell" role="region" aria-label="Diagrama da cadeia causal do Costa Concordia" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 276px;">
+    <img class="diagram-image" src="../assets/diagrams/costa-pt.svg" width="276" height="1022" alt="Diagrama da cadeia causal desde a derrota aprovada, desvio não autorizado, impacto, blackout, resposta tardia, abandono tardio, banda severa e evacuação caótica.">
+    <figcaption class="diagram-caption"><strong>Cadeia causal do Costa Concordia.</strong> <a href="../assets/diagrams/costa-pt.svg" target="_blank" rel="noopener">Abrir diagrama ampliado</a></figcaption>
+    <details class="diagram-alternative"><summary>Relações explicadas em HTML</summary><p>A derrota aprovada é seguida por um desvio inchino deliberado e uma aproximação costeira insegura. Uma manobra tardia perto de Le Scole conduz a brecha no casco e blackout, reconhecimento tardio da emergência, ordem tardia de abandono, banda severa, botes inutilizáveis e evacuação caótica com vítimas.</p></details>
+  </figure>
 </div>
 
 <h2 class="section-title">Timeline condensada</h2>
@@ -76,7 +70,7 @@ flowchart TD
     <span class="time">21:18</span>
     <div class="dot dot-warning"></div>
     <div class="content border-warning">
-      <h4>Desvio de rota não autorizado</h4>
+      <h3>Desvio de rota não autorizado</h3>
       <p>O navio sai da derrota aprovada para realizar um inchino próximo de Isola del Giglio.</p>
     </div>
   </div>
@@ -84,7 +78,7 @@ flowchart TD
     <span class="time">21:42</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>Impacto em Le Scole</h4>
+      <h3>Impacto em Le Scole</h3>
       <p>O costado de bombordo atinge a rocha, abrindo uma brecha maior e iniciando inundação progressiva.</p>
     </div>
   </div>
@@ -92,7 +86,7 @@ flowchart TD
     <span class="time">21:43</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Blackout e perda de propulsão</h4>
+      <h3>Blackout e perda de propulsão</h3>
       <p>A geração elétrica e a propulsão ficam comprometidas enquanto a estanqueidade já está a falhar.</p>
     </div>
   </div>
@@ -100,7 +94,7 @@ flowchart TD
     <span class="time">22:12</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Comunicação falsa às autoridades</h4>
+      <h3>Comunicação falsa às autoridades</h3>
       <p>A emergência é minimizada como simples blackout enquanto os passageiros já estão a telefonar para terra.</p>
     </div>
   </div>
@@ -108,7 +102,7 @@ flowchart TD
     <span class="time">22:54</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>Abandono do navio ordenado demasiado tarde</h4>
+      <h3>Abandono do navio ordenado demasiado tarde</h3>
       <p>A evacuação começa com banda severa, disponibilidade parcial dos meios e controlo de multidões degradado.</p>
     </div>
   </div>
@@ -116,7 +110,7 @@ flowchart TD
     <span class="time">00:30</span>
     <div class="dot dot-error"></div>
     <div class="content border-error">
-      <h4>O capitão deixa o navio</h4>
+      <h3>O capitão deixa o navio</h3>
       <p>A continuidade do comando é quebrada enquanto ainda há pessoas a bordo e a coordenação externa se intensifica.</p>
     </div>
   </div>
@@ -167,6 +161,7 @@ flowchart TD
       <li>A magnitude da brecha no casco excedeu os pressupostos ordinários de sobrevivência.</li>
       <li>A falha do VDR e as questões nas portas estanques reduziram resiliência e clareza investigativa.</li>
       <li>A banda crescente degradou a geometria de evacuação mais depressa do que o comando conseguiu adaptar-se.</li>
+      <li>A MSC.216(82) foi adotada em 2006, antes do sinistro. A SOLAS II-2/21 aplica-se a navios de passageiros com comprimento igual ou superior a 120 m ou com três ou mais zonas verticais principais, construídos em ou após 1 de julho de 2010.</li>
     </ul>
   </div>
 </div>
@@ -194,30 +189,5 @@ flowchart TD
 </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      lineColor: '#00d4ff',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif'
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 55,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>

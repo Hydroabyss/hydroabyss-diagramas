@@ -27,104 +27,12 @@
 <h1>Organização Marítima Internacional (IMO)</h1>
 <p class="subtitle">Estrutura de convenções, códigos e protocolos com conceitos-chave para formação marítima.</p>
 
-<div class="docs-panel diagram-shell" style="margin-top:24px;">
-<div class="mermaid">
-graph TD
-    IMO["🏛️ <b>IMO</b><br/>Organização Marítima Internacional<br/><i>Estabelecida em 1948 · Sede: Londres<br/>175 Estados-membros</i>"]
-
-    IMO -.->|"Missão: navegação segura,<br/>proteção do meio marinho,<br/>gente do mar competente"| MISION(["🌍 Navegação segura · Mares limpos · Gente do mar competente"])
-
-    IMO ==>|"governa"| ASAMBLEA["📋 <b>Assembleia</b><br/><i>Órgão supremo · Reúne-se a cada 2 anos<br/>Aprova orçamento e resoluções</i>"]
-    IMO ==>|"dirige"| CONSEJO["🏢 <b>Conselho</b><br/><i>Órgão executivo · 40 membros<br/>Supervisiona entre sessões da Assembleia</i>"]
-    IMO ==>|"administra"| SECRETARIA["📝 <b>Secretariado</b><br/><i>Coordena o trabalho técnico<br/>~300 funcionários internacionais</i>"]
-
-    CONSEJO ==>|"segurança"| MSC["⚓ <b>MSC</b><br/>Comitê de Segurança<br/>Marítima<br/><i>Principal comitê técnico</i>"]
-    CONSEJO ==>|"meio ambiente"| MEPC["🌿 <b>MEPC</b><br/>Comitê de Proteção<br/>do Meio Marinho"]
-    CONSEJO ==>|"direito marítimo"| LEG["⚖️ <b>Comitê Jurídico</b><br/><i>Responsabilidade e<br/>compensação</i>"]
-    CONSEJO -->|"cooperação técnica para<br/>países em desenvolvimento"| TC["🎓 Comitê de<br/>Cooperação Técnica"]
-    CONSEJO -->|"simplificação de<br/>formalidades"| FAL["📄 Comitê de<br/>Facilitação"]
-
-    MSC ==>|"convenção mais importante<br/>de segurança marítima"| SOLAS["🛡️ <b>SOLAS 1974</b><br/>Segurança da Vida<br/>Humana no Mar<br/><i>14 capítulos · Obrigatória</i>"]
-
-    MSC ==>|"competência profissional<br/>marítima"| STCW["📚 <b>STCW 1978/2010</b><br/>Formação, Certificação<br/>e Serviço de Quarto<br/><i>Emendas de Manila 2010</i>"]
-
-    MSC ==>|"regras de tráfego<br/>marítimo"| COLREG["🚦 <b>COLREG 1972</b><br/>Regulamento Internacional<br/>para Evitar Abalroamentos<br/><i>38 Regras + 4 Anexos</i>"]
-
-    MSC -->|"coordenação de<br/>busca e salvamento"| SAR["🆘 <b>SAR 1979</b><br/>Busca e<br/>Salvamento<br/><i>Plano SAR mundial</i>"]
-
-    MSC -->|"proteção contra<br/>atos ilícitos"| ISPS["🔒 <b>Código ISPS</b><br/>Proteção de Navios<br/>e Instalações Portuárias<br/><i>Pós-11/9 · Obrigatório 2004</i>"]
-
-    MEPC ==>|"convenção ambiental<br/>mais completa"| MARPOL["🌊 <b>MARPOL 73/78</b><br/>Prevenção da Poluição<br/>por Navios<br/><i>6 anexos técnicos</i>"]
-
-    MEPC -->|"espécies invasoras por<br/>água de lastro"| BWM["🦠 <b>BWM 2004</b><br/>Gestão da Água<br/>de Lastro<br/><i>Em vigor desde 2017</i>"]
-
-    MEPC -->|"tintas anti-incrustantes<br/>tóxicas"| AFS["🎨 <b>AFS 2001</b><br/>Sistemas<br/>Antiincrustantes<br/><i>Proíbe TBT</i>"]
-
-    LEG -->|"quem paga os danos<br/>por derrame de óleo?"| CLC["💰 <b>CLC 1969/92</b><br/>Responsabilidade Civil por<br/>Poluição por Hidrocarbonetos<br/><i>Responsabilidade objetiva<br/>do armador</i>"]
-
-    LEG -->|"fundo complementar quando<br/>o CLC não basta"| FUND["🏦 <b>FUND 1992</b><br/>Fundo Internacional<br/>de Compensação<br/><i>Financiado por recebedores<br/>de petróleo</i>"]
-
-    LEG -->|"limite máximo de<br/>indenização"| LLMC["📏 <b>LLMC 1976/96</b><br/>Limitação de<br/>Responsabilidade<br/><i>Baseado no GT do navio</i>"]
-
-    SOLAS ==>|"estrutura"| SOLAS_CAP["<b>14 Capítulos SOLAS</b>"]
-    SOLAS_CAP -->|"estrutura e<br/>estabilidade"| CAP_II["<b>Cap. II-1/II-2</b><br/>Construção · Compartimentação<br/>Estabilidade · Proteção contra incêndio"]
-    SOLAS_CAP -->|"botes, balsas,<br/>coletes"| CAP_III["<b>Cap. III</b><br/>Meios de<br/>Salvamento"]
-    SOLAS_CAP -->|"GMDSS"| CAP_IV["<b>Cap. IV</b><br/>Radiocomunicações<br/><i>GMDSS obrigatório</i>"]
-    SOLAS_CAP -->|"cartas, AIS,<br/>VDR, ECDIS"| CAP_V["<b>Cap. V</b><br/>Segurança da<br/>Navegação"]
-    SOLAS_CAP -->|"gestão da segurança"| CAP_IX["<b>Cap. IX</b><br/>Código ISM<br/><i>SMS obrigatório</i>"]
-    SOLAS_CAP -->|"medidas de proteção<br/>após 11/9"| CAP_XI["<b>Cap. XI-2</b><br/>Medidas especiais<br/>de proteção marítima"]
-
-    CAP_IX -.-|"implementa"| ISPS
-    CAP_III -.-|"detalhado por"| LSA
-    CAP_V -.-|"requer competência segundo"| STCW
-
-    MARPOL ==>|"6 anexos<br/>técnicos"| ANEXOS_M["<b>Anexos MARPOL</b>"]
-    ANEXOS_M -->|"petróleo bruto e derivados<br/>SOPEP · Livro de óleo"| ANX_I["<b>Anexo I</b><br/>Hidrocarbonetos<br/><i>Zonas especiais:<br/>Mediterrâneo, Báltico...</i>"]
-    ANEXOS_M -->|"químicos líquidos nocivos<br/>Categorias X,Y,Z,OS"| ANX_II["<b>Anexo II</b><br/>Substâncias Líquidas<br/>Nocivas a Granel"]
-    ANEXOS_M -->|"embalagem,<br/>marcação, rotulagem"| ANX_III["<b>Anexo III</b><br/>Substâncias Perigosas<br/>em Embalagens"]
-    ANEXOS_M -->|"tratamento de<br/>esgotos"| ANX_IV["<b>Anexo IV</b><br/>Águas Residuais"]
-    ANEXOS_M -->|"gestão integral<br/>de lixo a bordo"| ANX_V["<b>Anexo V</b><br/>Lixo<br/><i>Proibição geral<br/>de descargas</i>"]
-    ANEXOS_M -->|"SOx, NOx, CO2<br/>ECA · EEDI · CII"| ANX_VI["<b>Anexo VI</b><br/>Poluição Atmosférica<br/><i>Limite de enxofre 0,50%<br/>desde 2020</i>"]
-
-    STCW ==>|"partes obrigatória e<br/>recomendada"| STCW_COD["<b>Código STCW</b>"]
-    STCW_COD -->|"requisitos mínimos de<br/>competência"| PARTE_A["<b>Parte A</b><br/><i>Normas obrigatórias<br/>Tabelas de competência<br/>por função e nível</i>"]
-    STCW_COD -->|"orientação de<br/>implementação"| PARTE_B["<b>Parte B</b><br/><i>Orientação recomendada<br/>Critérios de avaliação</i>"]
-    STCW_COD -->|"material didático<br/>padronizado"| CURSOS_M["<b>Cursos Modelo IMO</b><br/>1.19 FBSM · 1.20 FSEI<br/>1.21 PSM · 1.29 BP<br/>2.03 ISPS · 7.04 OR"]
-
-    PARTE_A -->|"define 7 funções"| FUNCIONES["<b>Funções STCW</b><br/>1. Navegação<br/>2. Manuseio de carga<br/>3. Controlo do navio<br/>4. Engenharia marítima/elétrica<br/>5. Manutenção e reparação<br/>6. Radiocomunicações<br/>7. Proteção marítima"]
-
-    MSC ==>|"códigos técnicos<br/>obrigatórios"| OTROS["<b>Códigos Associados</b>"]
-    OTROS -->|"9 classes de<br/>mercadorias perigosas"| IMDG["☢️ <b>Código IMDG</b><br/>Mercadorias Perigosas<br/><i>Classificação · Embalagem<br/>Estiva · Segregação</i>"]
-    OTROS -->|"GNL, GPL e<br/>gases liquefeitos"| IGC["❄️ <b>Código IGC</b><br/>Navios gaseiros<br/><i>Tipos de tanques<br/>1, 2, 3, membrana</i>"]
-    OTROS -->|"produtos químicos<br/>a granel"| IBC["🧪 <b>Código IBC</b><br/>Granel Químico<br/><i>Lista de produtos e<br/>requisitos</i>"]
-    OTROS -->|"navegação no<br/>Ártico e Antártico"| POLAR["🧊 <b>Código Polar</b><br/>Águas Polares<br/><i>Em vigor desde 2017<br/>Categorias A, B, C</i>"]
-    OTROS -->|"especificações para<br/>equipamentos de salvamento"| LSA["🛟 <b>Código LSA</b><br/>Meios de<br/>Salvamento"]
-    OTROS -->|"deteção e combate<br/>a incêndios"| FSS["🔥 <b>Código FSS</b><br/>Sistemas de<br/>Segurança Contra Incêndio"]
-
-    IMDG -.-|"complementa"| ANX_III
-    COLREG -.-|"navegador competente<br/>segundo STCW"| STCW
-    MARPOL -.-|"navio seguro segundo"| SOLAS
-
-    classDef imo fill:#061525,stroke:#00d4ff,color:#fff,font-size:14px
-    classDef comite fill:#0a1e30,stroke:#357df9,color:#fff
-    classDef convenio fill:#081a2d,stroke:#00d4ff,color:#e8f4f8,font-size:12px
-    classDef codigo fill:#1d1808,stroke:#ffcd35,color:#fff2bf,font-size:11px
-    classDef anexo fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:11px
-    classDef organo fill:#0a1e30,stroke:#7acbff,color:#e8f4f8
-    classDef mision fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:12px
-    classDef funcion fill:#1b1019,stroke:#fc5185,color:#ffe6ee,font-size:11px
-
-    class IMO imo
-    class MSC,MEPC,LEG,TC,FAL comite
-    class ASAMBLEA,CONSEJO,SECRETARIA organo
-    class SOLAS,STCW,COLREG,SAR,ISPS,MARPOL,BWM,AFS,CLC,FUND,LLMC convenio
-    class IMDG,IGC,IBC,POLAR,LSA,FSS,CAP_II,CAP_III,CAP_IV,CAP_V,CAP_IX,CAP_XI codigo
-    class ANX_I,ANX_II,ANX_III,ANX_IV,ANX_V,ANX_VI anexo
-    class PARTE_A,PARTE_B,CURSOS_M codigo
-    class SOLAS_CAP,ANEXOS_M,STCW_COD,OTROS convenio
-    class MISION mision
-    class FUNCIONES funcion
-</div>
+<div class="docs-panel diagram-shell" role="region" aria-label="Diagrama de relações da IMO, dos seus órgãos, convenções e códigos" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 5444px;">
+    <img class="diagram-image" src="../assets/diagrams/imo-pt.svg" width="5444" height="2448" alt="Diagrama completo da IMO: Assembleia, Conselho e Secretaria; o Conselho relaciona os comités MSC, MEPC, Jurídico, de Cooperação Técnica e de Facilitação com convenções, códigos e anexos.">
+    <figcaption class="diagram-caption"><strong>Mapa normativo da IMO.</strong> <a href="../assets/diagrams/imo-pt.svg" target="_blank" rel="noopener">Abrir diagrama ampliado</a></figcaption>
+    <details class="diagram-alternative"><summary>Relações explicadas em HTML</summary><p>A IMO relaciona-se com a Assembleia, o Conselho e a Secretaria. O Conselho coordena os comités MSC, MEPC, Jurídico, de Cooperação Técnica e de Facilitação. O MSC liga-se a SOLAS, STCW, COLREG, SAR, ISPS e códigos técnicos; o MEPC a MARPOL, BWM e AFS; e o Comité Jurídico a CLC, FUND e LLMC. SOLAS desdobra-se em capítulos, MARPOL em seis anexos e STCW no seu Código, funções e cursos modelo.</p></details>
+  </figure>
 </div>
 
 <h2 class="section-title">Conceitos-chave da IMO e das suas principais convenções</h2>
@@ -164,7 +72,7 @@ graph TD
       <li><b>Zonas especiais:</b> Mediterrâneo, Báltico, Mar do Norte, Caribe, Mar Vermelho</li>
       <li><b>ECA:</b> Áreas de controlo de emissões com limites estritos de SOx e NOx</li>
       <li><b>Marco de 2020:</b> Limite global de enxofre reduzido para 0,50%</li>
-      <li><b>Descarbonização:</b> Estratégia da IMO para reduzir as emissões de GEE do transporte marítimo</li>
+      <li><b>Descarbonização:</b> A Estratégia da IMO de 2023 estabelece a ambição de alcançar emissões líquidas zero de GEE do transporte marítimo internacional por volta de 2050.</li>
     </ul>
   </div>
 
@@ -231,30 +139,5 @@ graph TD
 </div>
 
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      lineColor: '#00d4ff',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif'
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 55,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>
