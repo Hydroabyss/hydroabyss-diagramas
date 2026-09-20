@@ -159,18 +159,43 @@
 }
 
 .diagram-shell {
-  overflow-x: auto;
-}
-
-.diagram-shell .mermaid {
-  display: flex;
-  justify-content: center;
-  min-width: min-content;
-}
-
-.diagram-shell .mermaid svg {
+  min-width: 0;
+  overflow: auto;
   max-width: 100%;
+}
+
+.diagram-figure {
+  margin: 0;
+  min-width: max-content;
+}
+
+.diagram-image {
+  display: block;
+  width: var(--diagram-width);
+  max-width: none;
   height: auto;
+}
+
+.diagram-caption {
+  width: min(100%, 72ch);
+  margin: 16px 0 0;
+  color: var(--gray);
+}
+
+.diagram-caption a {
+  color: var(--cyan);
+  text-decoration: underline;
+}
+
+.diagram-alternative {
+  width: min(100%, 72ch);
+  margin: 16px 0 0;
+  color: var(--white);
+}
+
+.diagram-alternative summary {
+  cursor: pointer;
+  color: var(--cyan);
 }
 
 .docs-note-grid {
@@ -235,6 +260,7 @@
   background: rgba(3, 13, 26, 0.84);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
+  min-width: 0;
 }
 
 .top-nav a,
@@ -264,6 +290,7 @@
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
+  min-width: 0;
 }
 
 .lang-switch {
@@ -313,6 +340,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
+  min-width: 0;
 }
 
 .main-container-case {
@@ -322,6 +350,7 @@
 .concordia-hero {
   display: grid;
   gap: 18px;
+  min-width: 0;
 }
 
 .main-container-case .title-display {
@@ -548,7 +577,7 @@ h1 {
   border-color: var(--border-strong);
 }
 
-.event .content h4,
+.event .content h3,
 .v-card h3,
 .ops-card h3,
 .lecciones h3,
@@ -625,6 +654,7 @@ h1 {
 .lecciones,
 .transcript {
   padding: 20px;
+  min-width: 0;
 }
 
 .v-card ul,
@@ -697,6 +727,16 @@ h1 {
 
   .docs-panel {
     padding: 22px;
+  }
+
+  .concordia-note-grid,
+  .violations-grid,
+  .ops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-nav {
+    align-items: flex-start;
   }
 }
 

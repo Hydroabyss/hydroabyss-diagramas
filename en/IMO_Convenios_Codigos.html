@@ -27,104 +27,12 @@
 <h1>International Maritime Organization (IMO)</h1>
 <p class="subtitle">Structure of conventions, codes, and protocols with key concepts for maritime training.</p>
 
-<div class="docs-panel diagram-shell" style="margin-top:24px;">
-<div class="mermaid">
-graph TD
-    IMO["🏛️ <b>IMO</b><br/>International Maritime Organization<br/><i>Established 1948 · Headquarters: London<br/>175 member states</i>"]
-
-    IMO -.->|"Mission: safe navigation,<br/>protection of the marine environment,<br/>competent seafarers"| MISION(["🌍 Safe navigation · Clean seas · Competent seafarers"])
-
-    IMO ==>|"governs"| ASAMBLEA["📋 <b>Assembly</b><br/><i>Supreme body · Meets every 2 years<br/>Approves budget and resolutions</i>"]
-    IMO ==>|"directs"| CONSEJO["🏢 <b>Council</b><br/><i>Executive body · 40 members<br/>Supervises between Assembly sessions</i>"]
-    IMO ==>|"administers"| SECRETARIA["📝 <b>Secretariat</b><br/><i>Coordinates technical work<br/>~300 international officers</i>"]
-
-    CONSEJO ==>|"safety"| MSC["⚓ <b>MSC</b><br/>Maritime Safety<br/>Committee<br/><i>Main technical committee</i>"]
-    CONSEJO ==>|"environment"| MEPC["🌿 <b>MEPC</b><br/>Marine Environment<br/>Protection Committee"]
-    CONSEJO ==>|"maritime law"| LEG["⚖️ <b>Legal Committee</b><br/><i>Liability and<br/>compensation</i>"]
-    CONSEJO -->|"capacity-building for<br/>developing states"| TC["🎓 Technical<br/>Cooperation Committee"]
-    CONSEJO -->|"simplification of<br/>formalities"| FAL["📄 Facilitation<br/>Committee"]
-
-    MSC ==>|"most important<br/>maritime safety convention"| SOLAS["🛡️ <b>SOLAS 1974</b><br/>Safety of Life<br/>at Sea<br/><i>14 chapters · Mandatory</i>"]
-
-    MSC ==>|"maritime professional<br/>competence"| STCW["📚 <b>STCW 1978/2010</b><br/>Training, Certification<br/>and Watchkeeping<br/><i>Manila Amendments 2010</i>"]
-
-    MSC ==>|"rules of the road<br/>at sea"| COLREG["🚦 <b>COLREG 1972</b><br/>International Regulations<br/>for Preventing Collisions<br/><i>38 Rules + 4 Annexes</i>"]
-
-    MSC -->|"search and rescue<br/>coordination"| SAR["🆘 <b>SAR 1979</b><br/>Search and<br/>Rescue<br/><i>Global SAR plan</i>"]
-
-    MSC -->|"protection against<br/>unlawful acts"| ISPS["🔒 <b>ISPS Code</b><br/>Ship and Port Facility<br/>Security<br/><i>Post-9/11 · Mandatory 2004</i>"]
-
-    MEPC ==>|"most complete<br/>environmental convention"| MARPOL["🌊 <b>MARPOL 73/78</b><br/>Prevention of Pollution<br/>from Ships<br/><i>6 technical annexes</i>"]
-
-    MEPC -->|"invasive species through<br/>ballast water"| BWM["🦠 <b>BWM 2004</b><br/>Ballast Water<br/>Management<br/><i>In force since 2017</i>"]
-
-    MEPC -->|"toxic antifouling<br/>paints"| AFS["🎨 <b>AFS 2001</b><br/>Anti-Fouling<br/>Systems<br/><i>Bans TBT</i>"]
-
-    LEG -->|"who pays for<br/>oil spill damage?"| CLC["💰 <b>CLC 1969/92</b><br/>Civil Liability for Oil<br/>Pollution Damage<br/><i>Strict shipowner liability</i>"]
-
-    LEG -->|"supplementary fund when<br/>CLC is not enough"| FUND["🏦 <b>FUND 1992</b><br/>International Compensation<br/>Fund<br/><i>Financed by oil receivers</i>"]
-
-    LEG -->|"maximum compensation<br/>limit"| LLMC["📏 <b>LLMC 1976/96</b><br/>Limitation of<br/>Liability<br/><i>Based on vessel GT</i>"]
-
-    SOLAS ==>|"structure"| SOLAS_CAP["<b>14 SOLAS Chapters</b>"]
-    SOLAS_CAP -->|"structure and<br/>stability"| CAP_II["<b>Ch. II-1/II-2</b><br/>Construction · Subdivision<br/>Stability · Fire protection"]
-    SOLAS_CAP -->|"boats, rafts,<br/>lifejackets"| CAP_III["<b>Ch. III</b><br/>Life-Saving<br/>Appliances"]
-    SOLAS_CAP -->|"GMDSS"| CAP_IV["<b>Ch. IV</b><br/>Radiocommunications<br/><i>GMDSS mandatory</i>"]
-    SOLAS_CAP -->|"charts, AIS,<br/>VDR, ECDIS"| CAP_V["<b>Ch. V</b><br/>Safety of<br/>Navigation"]
-    SOLAS_CAP -->|"safety management"| CAP_IX["<b>Ch. IX</b><br/>ISM Code<br/><i>SMS mandatory</i>"]
-    SOLAS_CAP -->|"security measures<br/>after 9/11"| CAP_XI["<b>Ch. XI-2</b><br/>Special maritime<br/>security measures"]
-
-    CAP_IX -.-|"implements"| ISPS
-    CAP_III -.-|"detailed by"| LSA
-    CAP_V -.-|"requires competence under"| STCW
-
-    MARPOL ==>|"6 technical<br/>annexes"| ANEXOS_M["<b>MARPOL Annexes</b>"]
-    ANEXOS_M -->|"crude oil and products<br/>SOPEP · Oil record book"| ANX_I["<b>Annex I</b><br/>Oil<br/><i>Special areas:<br/>Mediterranean, Baltic...</i>"]
-    ANEXOS_M -->|"noxious liquid chemicals<br/>Categories X,Y,Z,OS"| ANX_II["<b>Annex II</b><br/>Noxious Liquid<br/>Substances in Bulk"]
-    ANEXOS_M -->|"packaging,<br/>marking, labelling"| ANX_III["<b>Annex III</b><br/>Harmful Substances<br/>in Packaged Form"]
-    ANEXOS_M -->|"treatment of<br/>sewage"| ANX_IV["<b>Annex IV</b><br/>Sewage"]
-    ANEXOS_M -->|"integrated garbage<br/>management on board"| ANX_V["<b>Annex V</b><br/>Garbage<br/><i>General discharge<br/>prohibition</i>"]
-    ANEXOS_M -->|"SOx, NOx, CO2<br/>ECA · EEDI · CII"| ANX_VI["<b>Annex VI</b><br/>Air Pollution<br/><i>0.50% sulfur cap<br/>since 2020</i>"]
-
-    STCW ==>|"mandatory and<br/>recommended parts"| STCW_COD["<b>STCW Code</b>"]
-    STCW_COD -->|"minimum competence<br/>requirements"| PARTE_A["<b>Part A</b><br/><i>Mandatory standards<br/>Competence tables<br/>by function and level</i>"]
-    STCW_COD -->|"implementation<br/>guidance"| PARTE_B["<b>Part B</b><br/><i>Recommended guidance<br/>Assessment criteria</i>"]
-    STCW_COD -->|"standardized training<br/>material"| CURSOS_M["<b>IMO Model Courses</b><br/>1.19 FBSM · 1.20 FSEI<br/>1.21 PSM · 1.29 BP<br/>2.03 ISPS · 7.04 OR"]
-
-    PARTE_A -->|"defines 7 functions"| FUNCIONES["<b>STCW Functions</b><br/>1. Navigation<br/>2. Cargo handling<br/>3. Ship control<br/>4. Marine engineering/electrical<br/>5. Maintenance and repair<br/>6. Radiocommunications<br/>7. Security"]
-
-    MSC ==>|"mandatory technical<br/>codes"| OTROS["<b>Associated Codes</b>"]
-    OTROS -->|"9 classes of<br/>dangerous goods"| IMDG["☢️ <b>IMDG Code</b><br/>Dangerous Goods<br/><i>Classification · Packaging<br/>Stowage · Segregation</i>"]
-    OTROS -->|"LNG, LPG<br/>and liquefied gases"| IGC["❄️ <b>IGC Code</b><br/>Gas Carriers<br/><i>Tank types<br/>1, 2, 3, membrane</i>"]
-    OTROS -->|"bulk chemical<br/>products"| IBC["🧪 <b>IBC Code</b><br/>Bulk Chemicals<br/><i>Product list and<br/>requirements</i>"]
-    OTROS -->|"navigation in the<br/>Arctic and Antarctic"| POLAR["🧊 <b>Polar Code</b><br/>Polar Waters<br/><i>In force 2017<br/>Categories A, B, C</i>"]
-    OTROS -->|"specifications for<br/>life-saving equipment"| LSA["🛟 <b>LSA Code</b><br/>Life-Saving<br/>Appliances"]
-    OTROS -->|"fire detection and<br/>extinguishing"| FSS["🔥 <b>FSS Code</b><br/>Fire Safety<br/>Systems"]
-
-    IMDG -.-|"complements"| ANX_III
-    COLREG -.-|"competent navigator<br/>under STCW"| STCW
-    MARPOL -.-|"safe ship under"| SOLAS
-
-    classDef imo fill:#061525,stroke:#00d4ff,color:#fff,font-size:14px
-    classDef comite fill:#0a1e30,stroke:#357df9,color:#fff
-    classDef convenio fill:#081a2d,stroke:#00d4ff,color:#e8f4f8,font-size:12px
-    classDef codigo fill:#1d1808,stroke:#ffcd35,color:#fff2bf,font-size:11px
-    classDef anexo fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:11px
-    classDef organo fill:#0a1e30,stroke:#7acbff,color:#e8f4f8
-    classDef mision fill:#08211a,stroke:#00b090,color:#dcfff6,font-size:12px
-    classDef funcion fill:#1b1019,stroke:#fc5185,color:#ffe6ee,font-size:11px
-
-    class IMO imo
-    class MSC,MEPC,LEG,TC,FAL comite
-    class ASAMBLEA,CONSEJO,SECRETARIA organo
-    class SOLAS,STCW,COLREG,SAR,ISPS,MARPOL,BWM,AFS,CLC,FUND,LLMC convenio
-    class IMDG,IGC,IBC,POLAR,LSA,FSS,CAP_II,CAP_III,CAP_IV,CAP_V,CAP_IX,CAP_XI codigo
-    class ANX_I,ANX_II,ANX_III,ANX_IV,ANX_V,ANX_VI anexo
-    class PARTE_A,PARTE_B,CURSOS_M codigo
-    class SOLAS_CAP,ANEXOS_M,STCW_COD,OTROS convenio
-    class MISION mision
-    class FUNCIONES funcion
-</div>
+<div class="docs-panel diagram-shell" role="region" aria-label="Relationship diagram of the IMO, its bodies, conventions and codes" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 5222px;">
+    <img class="diagram-image" src="../assets/diagrams/imo-en.svg" width="5222" height="2394" alt="Complete IMO diagram: Assembly, Council and Secretariat; the Council links MSC, MEPC, Legal, Technical Cooperation and Facilitation Committees with conventions, codes and annexes.">
+    <figcaption class="diagram-caption"><strong>IMO regulatory map.</strong> <a href="../assets/diagrams/imo-en.svg" target="_blank" rel="noopener">Open enlarged diagram</a></figcaption>
+    <details class="diagram-alternative"><summary>Relationships explained in HTML</summary><p>The IMO connects to the Assembly, Council and Secretariat. The Council coordinates MSC, MEPC, Legal, Technical Cooperation and Facilitation Committees. MSC links to SOLAS, STCW, COLREG, SAR, ISPS and technical codes; MEPC to MARPOL, BWM and AFS; and the Legal Committee to CLC, FUND and LLMC. SOLAS expands into chapters, MARPOL into six annexes, and STCW into its Code, functions and model courses.</p></details>
+  </figure>
 </div>
 
 <h2 class="section-title">Key IMO concepts and its main conventions</h2>
@@ -164,7 +72,7 @@ graph TD
       <li><b>Special areas:</b> Mediterranean, Baltic, North Sea, Caribbean, Red Sea</li>
       <li><b>ECA:</b> Emission Control Areas with strict SOx and NOx limits</li>
       <li><b>2020 milestone:</b> Global sulfur limit reduced to 0.50%</li>
-      <li><b>Decarbonization:</b> IMO strategy to reduce GHG emissions from shipping</li>
+      <li><b>Decarbonization:</b> The IMO's 2023 Strategy sets an ambition to reach net-zero GHG emissions from international shipping by or around 2050.</li>
     </ul>
   </div>
 
@@ -231,30 +139,5 @@ graph TD
 </div>
 
 </main>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      lineColor: '#00d4ff',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif'
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 55,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>

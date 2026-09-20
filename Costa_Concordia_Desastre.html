@@ -59,87 +59,12 @@
 
 <h2 class="section-title">Cadena de Errores — Flujograma Causal</h2>
 
-<div class="mermaid">
-graph TD
-    ROOT["🚢 <b>COSTA CONCORDIA</b><br/>13 enero 2012<br/><i>4.229 personas a bordo</i>"]
-
-    %% ── CAUSAS RAÍZ ──
-    ROOT ==>|"Origen del desastre"| CAUSAS["🔴 <b>CAUSAS RAÍZ</b>"]
-
-    CAUSAS -->|"Práctica habitual<br/>no autorizada"| SALUTO["<b>Inchino / Saluto</b><br/>Desvío deliberado de ruta<br/>para saludar a la isla<br/><i>Práctica tolerada por<br/>la naviera durante años</i>"]
-
-    CAUSAS -->|"Capitán incompetente<br/>en gestión de crisis"| CAPITAN["<b>Liderazgo del Capitán</b><br/>Schettino cenando en restaurante<br/>al momento del impacto<br/><i>No estaba en el puente</i>"]
-
-    CAUSAS -->|"Fallo sistémico<br/>de la compañía"| NAVIERA["<b>Fallo de Costa Crociere</b><br/>SMS deficiente<br/>No auditó rutas reales<br/><i>Cultura de seguridad<br/>insuficiente</i>"]
-
-    CAUSAS -->|"Fallos técnicos<br/>previos no corregidos"| TECNICOS["<b>Fallos Técnicos</b><br/>VDR averiado 15 días<br/>Puertas estancas abiertas<br/><i>Mapas no aprobados<br/>en uso</i>"]
-
-    %% ── CADENA DE EVENTOS ──
-    SALUTO ==>|"Velocidad 15.5 kn<br/>cerca de costa"| IMPACTO["💥 <b>IMPACTO</b><br/>21:42 h<br/>Roca Le Scole<br/><i>Brecha de 70 m<br/>en el casco</i>"]
-
-    IMPACTO ==>|"Inundación masiva<br/>5 compartimentos"| FLOOD["🌊 <b>Inundación progresiva</b><br/>Pérdida de propulsión<br/>y energía eléctrica<br/><i>Puertas estancas abiertas<br/>aceleran inundación</i>"]
-
-    FLOOD -->|"Sistema Martec<br/>falla"| MARTEC["⚡ <b>Fallo Sistema Martec</b><br/>Puertas de ascensores<br/>no cierran correctamente<br/><i>4 pasajeros mueren<br/>atrapados en ascensores</i>"]
-
-    FLOOD ==>|"1h 12min de<br/>retraso fatal"| DEMORA["⏱️ <b>Demora en dar la alarma</b><br/>Capitán minimiza situación<br/>Dice a Guardacostas:<br/><i>'Solo es un blackout'</i>"]
-
-    DEMORA ==>|"Orden tardía<br/>22:54 h"| ABANDONO["🚨 <b>Abandono de buque</b><br/>Orden dada 1h 12min<br/>después del impacto<br/><i>Buque ya con 20° escora</i>"]
-
-    ABANDONO ==>|"Escora impide<br/>usar botes"| CAOS["😱 <b>Evacuación caótica</b><br/>Botes de babor inutilizables<br/>Pasajeros sin instrucciones<br/><i>No hubo simulacro previo<br/>de evacuación</i>"]
-
-    CAOS ==>|"Capitán abandona<br/>antes que pasajeros"| ABANDONO_CAP["🏃 <b>Schettino abandona</b><br/>Sale del buque ~00:30 h<br/>mientras quedan personas<br/>a bordo"]
-
-    ABANDONO_CAP ==>|"'Vada a bordo,<br/>cazzo!'"| DEFALCO["📻 <b>Cap. De Falco</b><br/>Guardacostas ordena<br/>a Schettino regresar<br/><i>Se niega a volver</i>"]
-
-    CAOS ==>|"Resultado final"| VICTIMAS["💀 <b>32 FALLECIDOS</b><br/>64 heridos graves<br/>Último cuerpo recuperado<br/>en noviembre 2014"]
-
-    %% ── CONSECUENCIAS ──
-    VICTIMAS ==>|"Operaciones<br/>post-desastre"| SALVAGE["🔧 <b>SMIT Salvage</b><br/>Extracción de combustible<br/>20 ene - 24 mar 2012<br/><i>2.200 t de IFO 380</i>"]
-
-    SALVAGE ==>|"Reflotación<br/>2013-2014"| REFLOT["⚓ <b>Reflotación</b><br/>Parbuckling: 16 sep 2013<br/>4 fases con cajones<br/><i>Remolque a Génova:<br/>jul 2014</i>"]
-
-    %% ── VIOLACIONES CONECTADAS ──
-    SALUTO -.-|"❌ SOLAS V/34<br/>Planificación de viaje"| V_SOLAS1(["SOLAS Cap. V<br/>Regla 34"])
-    SALUTO -.-|"❌ COLREG Regla 6<br/>Velocidad de seguridad"| V_COLREG1(["COLREG<br/>Regla 6"])
-    SALUTO -.-|"❌ COLREG Regla 5<br/>Vigilancia"| V_COLREG2(["COLREG<br/>Regla 5"])
-
-    NAVIERA -.-|"❌ Código ISM<br/>Gestión seguridad"| V_ISM(["SOLAS Cap. IX<br/>Código ISM"])
-
-    TECNICOS -.-|"❌ SOLAS V/18<br/>Equipos operativos"| V_VDR(["SOLAS V/18<br/>VDR operativo"])
-
-    DEMORA -.-|"❌ SOLAS III/19<br/>Señal de emergencia"| V_SOLAS2(["SOLAS Cap. III<br/>Regla 19"])
-    DEMORA -.-|"❌ SAR<br/>No comunicó emergencia"| V_SAR(["Convenio SAR<br/>1979"])
-
-    CAOS -.-|"❌ SOLAS III/19.3<br/>Simulacro 24h"| V_SOLAS3(["SOLAS Cap. III<br/>Regla 19.3"])
-    CAOS -.-|"❌ STCW A-V/2<br/>Gestión de crisis"| V_STCW(["STCW<br/>A-V/2"])
-
-    ABANDONO_CAP -.-|"❌ Art. 303 Cod. Nav.<br/>+ Art. 610/612 C. Com."| V_LEY(["Ley Italiana +<br/>C. Comercio Español"])
-
-    FLOOD -.-|"❌ MARPOL Anexo I<br/>Vertido combustible"| V_MARPOL(["MARPOL<br/>Anexo I"])
-
-    FLOOD -.-|"❌ SOLAS II-1<br/>Subdivisión"| V_SUBDIV(["SOLAS II-1<br/>Compartimentado"])
-
-    %% ── ESTILOS ──
-    classDef root fill:#061525,stroke:#00d4ff,color:#e8f4f8,stroke-width:3px
-    classDef causa fill:#081a2d,stroke:#00d4ff,color:#e8f4f8
-    classDef evento fill:#0a1e30,stroke:#357df9,color:#e8f4f8
-    classDef critico fill:#1b1019,stroke:#fc5185,color:#ffe6ee,stroke-width:2px
-    classDef fatal fill:#3a0d18,stroke:#fc5185,color:#fff,stroke-width:3px
-    classDef violacion fill:#081a2d,stroke:#357df9,color:#b6d7ff,stroke-dasharray:5
-    classDef guardacostas fill:#08211a,stroke:#00b090,color:#dcfff6
-    classDef tecnico fill:#1d1808,stroke:#ffcd35,color:#fff2bf
-    classDef salvage fill:#08211a,stroke:#00b090,color:#dcfff6
-
-    class ROOT root
-    class CAUSAS,SALUTO,CAPITAN,NAVIERA causa
-    class TECNICOS tecnico
-    class IMPACTO,FLOOD,DEMORA critico
-    class MARTEC tecnico
-    class ABANDONO,CAOS critico
-    class ABANDONO_CAP,VICTIMAS fatal
-    class DEFALCO guardacostas
-    class SALVAGE,REFLOT salvage
-    class V_SOLAS1,V_SOLAS2,V_SOLAS3,V_COLREG1,V_COLREG2,V_ISM,V_STCW,V_SAR,V_MARPOL,V_LEY,V_VDR,V_SUBDIV violacion
+<div class="docs-panel diagram-shell" role="region" aria-label="Diagrama de la cadena causal del Costa Concordia" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 2095px;">
+    <img class="diagram-image" src="assets/diagrams/costa-es.svg" width="2095" height="2406" alt="Diagrama completo de la cadena causal: causas de raíz, desvío de derrota, impacto, inundación, retraso de alarma, abandono tardío, evacuación caótica, víctimas, salvamento y normativa relacionada.">
+    <figcaption class="diagram-caption"><strong>Cadena causal del Costa Concordia.</strong> <a href="assets/diagrams/costa-es.svg" target="_blank" rel="noopener">Abrir diagrama ampliado</a></figcaption>
+    <details class="diagram-alternative"><summary>Relaciones explicadas en HTML</summary><p>Las causas raíz incluyen el inchino tolerado, el liderazgo de puente, el sistema de gestión de Costa Crociere y fallos técnicos. El desvío conduce al impacto en Le Scole, la inundación y el blackout. El retraso en reconocer la emergencia conduce a una orden tardía de abandono, con escora, botes inutilizables y evacuación caótica. El diagrama vincula cada etapa con SOLAS, COLREG, ISM, STCW, SAR y MARPOL; las víctimas conducen a las operaciones de salvamento y reflotación.</p></details>
+  </figure>
 </div>
 
 <!-- ═══════════════════════════════════════ -->
@@ -154,7 +79,7 @@ graph TD
     <span class="time">19:18</span>
     <div class="dot dot-normal"></div>
     <div class="content border-normal">
-      <h4>Zarpe de Civitavecchia</h4>
+      <h3>Zarpe de Civitavecchia</h3>
       <p>Costa Concordia zarpa con 3.206 pasajeros y 1.023 tripulantes. Ruta prevista: Civitavecchia → Savona con escala en otros puertos del Mediterráneo. No se realiza simulacro de evacuación para los pasajeros embarcados ese día.</p>
     </div>
   </div>
@@ -163,7 +88,7 @@ graph TD
     <span class="time">21:08</span>
     <div class="dot dot-info"></div>
     <div class="content border-info">
-      <h4>📱 Post en Facebook anuncia el paso</h4>
+      <h3>📱 Post en Facebook anuncia el paso</h3>
       <p><b>Patrizia Tievoli</b>, esposa del maître Antonello Tievoli (natural de Giglio), publica en Facebook: <i>"El Costa Concordia pasará muy cerca de Giglio esta noche"</i>. Demuestra que el desvío era conocido y premeditado, no espontáneo.</p>
     </div>
   </div>
@@ -172,7 +97,7 @@ graph TD
     <span class="time">21:18</span>
     <div class="dot dot-warning"></div>
     <div class="content border-warning">
-      <h4>Schettino ordena desvío de ruta</h4>
+      <h3>Schettino ordena desvío de ruta</h3>
       <p>El capitán ordena al timonel cambiar el rumbo para realizar un <b>"inchino"</b> (saludo) frente a Isola del Giglio. Antonello Tievoli está en el puente. La ruta planificada pasaba a millas de la isla. <b>Schettino usa mapas no aprobados</b> para la aproximación costera.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS V/34 — Planificación de viaje</span>
@@ -186,7 +111,7 @@ graph TD
     <span class="time">21:34</span>
     <div class="dot dot-warning"></div>
     <div class="content border-warning">
-      <h4>Velocidad excesiva en aproximación</h4>
+      <h3>Velocidad excesiva en aproximación</h3>
       <p>El buque navega a <b>15,5 nudos</b> en proximidad a la costa rocosa de Giglio. No se reduce velocidad. El radar muestra claramente la costa pero no se toman acciones correctivas. <b>Schettino no se encuentra en el puente</b> — está cenando en el restaurante.</p>
       <div class="violations">
         <span class="tag tag-colreg">COLREG Regla 6 — Velocidad de seguridad</span>
@@ -200,7 +125,7 @@ graph TD
     <span class="time">21:40</span>
     <div class="dot dot-error"></div>
     <div class="content border-error">
-      <h4>Primer oficial advierte proximidad</h4>
+      <h3>Primer oficial advierte proximidad</h3>
       <p>El 1er Oficial Ciro Ambrosio nota la cercanía a la costa en el ECDIS. Schettino llega al puente y ignora las advertencias. El sistema de alarma del ECDIS había sido desactivado previamente.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS V/19 — Equipos de navegación</span>
@@ -214,7 +139,7 @@ graph TD
     <span class="time">21:41</span>
     <div class="dot dot-error"></div>
     <div class="content border-error">
-      <h4>Schettino ordena "hard to port"</h4>
+      <h3>Schettino ordena "hard to port"</h3>
       <p>Demasiado tarde. Ordena meter todo el timón a babor cuando el buque está a menos de 500 m de las rocas. El timonel indonesio <b>Jacob Rusli Bin</b> confunde la orden inicialmente (barrera idiomática). Ambrosio corrige: <i>"Hard to starboard!"</i></p>
       <div class="violations">
         <span class="tag tag-stcw">STCW A-II/1 — Comunicación en puente</span>
@@ -227,7 +152,7 @@ graph TD
     <span class="time">21:42</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>💥 IMPACTO — Roca Le Scole</h4>
+      <h3>💥 IMPACTO — Roca Le Scole</h3>
       <p>El costado de babor impacta contra la formación rocosa <b>Le Scole</b> a 500 m de la costa. Se produce una brecha de <b>70 metros</b> en el casco (no 53 m como se informó inicialmente). Inundación inmediata de la sala de máquinas y compartimentos inferiores. Se corta la generación eléctrica principal. Un fragmento de roca de <b>varias toneladas</b> queda incrustado en el casco.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS II-1 — Estabilidad tras avería</span>
@@ -241,7 +166,7 @@ graph TD
     <span class="time">21:43</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Blackout total — Pérdida de propulsión</h4>
+      <h3>Blackout total — Pérdida de propulsión</h3>
       <p>Fallo completo de energía. Los generadores de emergencia activan iluminación mínima. El buque queda a la deriva con inercia, girando lentamente hacia la costa de Giglio. 2.200 toneladas de combustible a bordo comienzan a filtrarse. <b>Las puertas estancas no se cierran todas</b> — varias permanecen abiertas, acelerando la inundación entre compartimentos.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS II-1 — Puertas estancas</span>
@@ -253,7 +178,7 @@ graph TD
     <span class="time">21:44</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>⚡ Fallo del sistema Martec — Ascensores</h4>
+      <h3>⚡ Fallo del sistema Martec — Ascensores</h3>
       <p>El sistema de control <b>Martec</b> del buque falla. Las puertas de los ascensores no se abren correctamente. <b>4 pasajeros quedan atrapados</b> dentro de los ascensores y fallecen ahogados cuando el agua inunda las cubiertas inferiores.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS II-2 — Sistemas de seguridad</span>
@@ -265,7 +190,7 @@ graph TD
     <span class="time">21:50</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Schettino NO da la alarma general</h4>
+      <h3>Schettino NO da la alarma general</h3>
       <p>Pasan 8 minutos desde el impacto. Los pasajeros sienten el golpe, ven platos caerse, pero <b>no se activa ninguna alarma</b>. Por megafonía se anuncia un "fallo eléctrico". El capitán prohíbe a la tripulación comunicar la gravedad.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS III/19.3.2 — Señal de emergencia</span>
@@ -279,7 +204,7 @@ graph TD
     <span class="time">22:03</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Schettino llama a Costa Crociere</h4>
+      <h3>Schettino llama a Costa Crociere</h3>
       <p>Contacta con <b>Roberto Ferrarini</b> (Director de crisis de Costa Crociere) en Génova. Minimiza la situación. Ferrarini tampoco ordena evacuación inmediata. <b>Fallo a nivel corporativo.</b></p>
       <div class="violations">
         <span class="tag tag-ism">ISM 8 — Respuesta de emergencia en tierra</span>
@@ -291,7 +216,7 @@ graph TD
     <span class="time">22:12</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Guardacostas de Livorno contacta al buque</h4>
+      <h3>Guardacostas de Livorno contacta al buque</h3>
       <p>La Capitaneria di Porto de Livorno llama al Costa Concordia tras recibir llamadas de pasajeros que alertaron del desastre por teléfono móvil. <b>Schettino dice: "Solo es un blackout, un problema eléctrico."</b></p>
       <div class="violations">
         <span class="tag tag-sar">SAR 1979 — Obligación de comunicar emergencia</span>
@@ -304,7 +229,7 @@ graph TD
     <span class="time">22:26</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Escora creciente — 10° a babor</h4>
+      <h3>Escora creciente — 10° a babor</h3>
       <p>El buque escora progresivamente. El agua invade cubiertas inferiores. Pasajeros empiezan a ponerse chalecos salvavidas por iniciativa propia. No ha habido simulacro de evacuación (el buque zarpó ese mismo día).</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS III/19.3.3 — Simulacro dentro de 24h</span>
@@ -316,7 +241,7 @@ graph TD
     <span class="time">22:48</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Guardacostas exige saber la verdad</h4>
+      <h3>Guardacostas exige saber la verdad</h3>
       <p>De Falco insiste. Schettino finalmente admite que hay vía de agua. Han pasado <b>más de 60 minutos</b> desde el impacto sin orden de abandono.</p>
     </div>
   </div>
@@ -325,7 +250,7 @@ graph TD
     <span class="time">22:54</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>🚨 Señal de ABANDONO DE BUQUE — 1h 12min tarde</h4>
+      <h3>🚨 Señal de ABANDONO DE BUQUE — 1h 12min tarde</h3>
       <p>Finalmente se da la orden de abandonar buque. La escora ya supera <b>20°</b>. Los botes de babor son inoperables por la inclinación. Caos total: pasajeros sin instrucciones, tripulación sin formación adecuada en crisis.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS III/21 — Operación de botes salvavidas</span>
@@ -339,7 +264,7 @@ graph TD
     <span class="time">23:00</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>Evacuación caótica</h4>
+      <h3>Evacuación caótica</h3>
       <p>Solo los botes de estribor pueden arriarse. Muchos pasajeros saltan al agua. Helicópteros de Guardacostas y ferrys de Giglio participan en el rescate. Decenas de personas quedan atrapadas en el interior del buque volcado.</p>
     </div>
   </div>
@@ -348,7 +273,7 @@ graph TD
     <span class="time">23:36</span>
     <div class="dot dot-error"></div>
     <div class="content border-error">
-      <h4>📦 VDR deja de grabar</h4>
+      <h3>📦 VDR deja de grabar</h3>
       <p>El <b>Voyage Data Recorder</b> (caja negra) deja de grabar definitivamente. El VDR llevaba <b>15 días averiado</b> antes del accidente, con grabaciones intermitentes. Se pierde información crucial sobre las últimas horas de la emergencia.</p>
       <div class="violations">
         <span class="tag tag-solas">SOLAS V/18.8 — VDR operativo</span>
@@ -360,7 +285,7 @@ graph TD
     <span class="time">00:30</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>🏃 Schettino abandona el buque</h4>
+      <h3>🏃 Schettino abandona el buque</h3>
       <p>El capitán sube a un bote salvavidas y llega a tierra <b>mientras cientos de personas siguen a bordo</b>. A la 01:46, el capitán de fragata Gregorio De Falco le ordena por radio:</p>
       <p style="color:var(--meteorite-light); font-size:1rem; margin-top:8px; font-style:italic;"><b>"Vada a bordo, cazzo!"</b> (¡Suba a bordo, carajo!)</p>
       <p style="margin-top:4px;">Schettino se niega a regresar. Alega que "cayó al bote" y que "está oscuro y no puede ver nada".</p>
@@ -377,7 +302,7 @@ graph TD
     <span class="time">06:00</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>💀 Balance: 32 fallecidos</h4>
+      <h3>💀 Balance: 32 fallecidos</h3>
       <p>Se confirman 32 víctimas mortales (30 pasajeros y 2 tripulantes) y 64 heridos graves. El último cuerpo fue recuperado el 3 de noviembre de 2014. El buque quedó semihundido frente a Giglio durante 2 años hasta su remoción.</p>
     </div>
   </div>
@@ -482,7 +407,7 @@ graph TD
       <li><b>Factor de subdivisión (F):</b> Para buques de pasaje, F depende del criterio de servicio (Cs). El Costa Concordia fue diseñado con F=0.5 (máxima subdivisión para pasaje), pero la brecha de 70 m superó cualquier escenario de diseño.</li>
       <li><b>Línea de margen:</b> La línea de margen (76 mm bajo cubierta de cierre) fue alcanzada rápidamente al superar el compartimentado previsto.</li>
       <li><b>Puertas estancas:</b> Varias permanecieron abiertas, acelerando la inundación progresiva entre compartimentos.</li>
-      <li><b>Safe Return to Port (MSC.216(82)):</b> Regulación posterior al accidente — exige que buques de pasaje mantengan 13 sistemas esenciales operativos con inundación parcial para regresar a puerto por medios propios.</li>
+      <li><b>Safe Return to Port (MSC.216(82)):</b> Enmienda adoptada en 2006, antes del accidente. II-2/21 se aplica a buques de pasaje de eslora igual o superior a 120 m o con tres o más zonas verticales principales, construidos el 1 de julio de 2010 o posteriormente; exige que puedan regresar a puerto por sus propios medios tras un incendio o inundación que no exceda el umbral reglamentario.</li>
     </ul>
   </div>
 
@@ -573,8 +498,8 @@ graph TD
   <div class="v-card vc-solas">
     <h3>🚢 Safe Return to Port — MSC.216(82)</h3>
     <ul>
-      <li><b>Origen:</b> Regulación adoptada por la IMO tras el Costa Concordia. Aplica a buques de pasaje ≥ 120 m construidos después de julio 2010.</li>
-      <li><b>Principio:</b> El buque debe poder regresar a puerto por medios propios con un compartimento inundado, manteniendo operativos <b>13 sistemas esenciales</b>.</li>
+      <li><b>Origen:</b> MSC.216(82) fue adoptada en 2006; entró en vigor el 1 de julio de 2010, antes del Costa Concordia.</li>
+      <li><b>Ámbito y principio:</b> SOLAS II-2/21 aplica a buques de pasaje de eslora ≥ 120 m o con tres o más zonas verticales principales, construidos el 1 de julio de 2010 o posteriormente. Deben regresar a puerto por sus propios medios tras un incendio o una inundación que no exceda el umbral reglamentario, manteniendo operativos <b>13 sistemas esenciales</b>.</li>
       <li><b>Sistemas esenciales:</b> Propulsión, gobierno, navegación, comunicaciones internas y externas, vías de escape, dispositivos de cierre, detección y extinción de incendios, achique, alarmas, sistemas de salvamento, iluminación de emergencia, HVAC de seguridad.</li>
       <li><b>Umbral de evacuación:</b> Si el daño supera la capacidad de SRtP → el buque debe poder evacuar ordenadamente en 3 horas.</li>
     </ul>
@@ -592,7 +517,7 @@ graph TD
 
   <div class="v-card vc-tecnico">
     <h3>⏱️ Fórmula de Tiempo de Evacuación</h3>
-    <p style="font-size: 1.1rem; color: var(--primary-dark); text-align: center; margin: 10px 0;"><b>A + T + 2/3(E + L) &lt; T<sub>max</sub></b></p>
+    <p style="font-size: 1.1rem; color: var(--cyan); text-align: center; margin: 10px 0;"><b>A + T + 2/3(E + L) &lt; T<sub>max</sub></b></p>
     <ul>
       <li><b>A</b> = Tiempo de concienciación (awareness). Desde alarma hasta que el pasajero reacciona.</li>
       <li><b>T</b> = Tiempo de tránsito. Desplazamiento desde camarote hasta punto de reunión.</li>
@@ -693,7 +618,7 @@ graph TD
   <h3>Cambios adoptados por la IMO tras el desastre</h3>
   <ul>
     <li><b>SOLAS III/19.3.3 (Enmienda 2015):</b> Simulacro de evacuación obligatorio <u>antes de zarpar</u> o inmediatamente después (antes era dentro de 24h).</li>
-    <li><b>SOLAS II-1/Reg. 8-A (2020):</b> Nuevos requisitos de estabilidad tras avería — "Safe Return to Port" (MSC.216(82)) con 13 sistemas esenciales operativos.</li>
+    <li><b>Safe Return to Port:</b> MSC.216(82), adoptada en 2006 y en vigor desde 2010, ya establecía el marco de retorno seguro a puerto; las lecciones posteriores al Costa Concordia se evaluaron dentro de la evolución normativa posterior, sin atribuir retrospectivamente esa resolución al accidente.</li>
     <li><b>SOLAS V/18.8 — VDR:</b> Requisitos reforzados de mantenimiento y verificación periódica del Voyage Data Recorder. El VDR debe estar operativo en todo momento.</li>
     <li><b>Directrices ISM reforzadas:</b> Auditorías más estrictas de rutas reales vs. planificadas. Prohibición expresa de desviaciones no autorizadas.</li>
     <li><b>Bridge Resource Management (BRM):</b> Refuerzo de la formación STCW con énfasis en que cualquier oficial debe poder cuestionar al capitán.</li>
@@ -713,31 +638,5 @@ graph TD
 </div>
 
 </div><!-- /main-container -->
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      lineColor: '#00d4ff',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif',
-      darkMode: true
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 50,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>

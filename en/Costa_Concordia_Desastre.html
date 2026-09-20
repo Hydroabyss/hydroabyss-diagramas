@@ -55,18 +55,12 @@
 
 <h2 class="section-title">Causal chain</h2>
 
-<div class="docs-panel diagram-shell">
-<div class="mermaid">
-flowchart TD
-    A[Approved route] --> B[Deliberate inchino deviation]
-    B --> C[Unsafe coastal approach at 15.5 kn]
-    C --> D[Late maneuver near Le Scole]
-    D --> E[Hull breach and blackout]
-    E --> F[Delayed emergency recognition]
-    F --> G[Late abandon-ship order]
-    G --> H[Severe list and unusable boats]
-    H --> I[Chaotic evacuation and fatalities]
-</div>
+<div class="docs-panel diagram-shell" role="region" aria-label="Costa Concordia causal-chain diagram" tabindex="0">
+  <figure class="diagram-figure" style="--diagram-width: 276px;">
+    <img class="diagram-image" src="../assets/diagrams/costa-en.svg" width="276" height="1046" alt="Causal-chain diagram from approved route through unauthorized deviation, impact, blackout, delayed emergency response, late abandonment, severe list and chaotic evacuation.">
+    <figcaption class="diagram-caption"><strong>Costa Concordia causal chain.</strong> <a href="../assets/diagrams/costa-en.svg" target="_blank" rel="noopener">Open enlarged diagram</a></figcaption>
+    <details class="diagram-alternative"><summary>Relationships explained in HTML</summary><p>The approved route is followed by a deliberate inchino deviation and an unsafe coastal approach. A late manoeuvre near Le Scole leads to hull breach and blackout, delayed emergency recognition, a late abandon-ship order, severe list, unusable boats and a chaotic evacuation with fatalities.</p></details>
+  </figure>
 </div>
 
 <h2 class="section-title">Condensed timeline</h2>
@@ -76,7 +70,7 @@ flowchart TD
     <span class="time">21:18</span>
     <div class="dot dot-warning"></div>
     <div class="content border-warning">
-      <h4>Unauthorized route deviation</h4>
+      <h3>Unauthorized route deviation</h3>
       <p>The ship leaves the approved track to perform an inchino close to Isola del Giglio.</p>
     </div>
   </div>
@@ -84,7 +78,7 @@ flowchart TD
     <span class="time">21:42</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>Impact at Le Scole</h4>
+      <h3>Impact at Le Scole</h3>
       <p>The port side strikes rock, opening a major hull breach and triggering progressive flooding.</p>
     </div>
   </div>
@@ -92,7 +86,7 @@ flowchart TD
     <span class="time">21:43</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>Blackout and propulsion loss</h4>
+      <h3>Blackout and propulsion loss</h3>
       <p>Power generation and propulsion are compromised while watertight integrity is already failing.</p>
     </div>
   </div>
@@ -100,7 +94,7 @@ flowchart TD
     <span class="time">22:12</span>
     <div class="dot dot-critical"></div>
     <div class="content border-critical">
-      <h4>False communication to authorities</h4>
+      <h3>False communication to authorities</h3>
       <p>The emergency is minimized as a simple blackout while passengers are already calling ashore.</p>
     </div>
   </div>
@@ -108,7 +102,7 @@ flowchart TD
     <span class="time">22:54</span>
     <div class="dot dot-fatal"></div>
     <div class="content border-fatal">
-      <h4>Abandon ship ordered too late</h4>
+      <h3>Abandon ship ordered too late</h3>
       <p>The evacuation begins with severe list, partial appliance availability, and degraded crowd control.</p>
     </div>
   </div>
@@ -116,7 +110,7 @@ flowchart TD
     <span class="time">00:30</span>
     <div class="dot dot-error"></div>
     <div class="content border-error">
-      <h4>Master leaves the vessel</h4>
+      <h3>Master leaves the vessel</h3>
       <p>Command continuity is broken while people remain on board and external coordination intensifies.</p>
     </div>
   </div>
@@ -167,6 +161,7 @@ flowchart TD
       <li>Hull breach magnitude exceeded ordinary survivability assumptions.</li>
       <li>VDR failure and watertight-door issues reduced both resilience and investigative clarity.</li>
       <li>Escalating list degraded evacuation geometry faster than command adapted.</li>
+      <li>MSC.216(82) was adopted in 2006, before the casualty. SOLAS II-2/21 applies to passenger ships 120 m or more in length or with three or more main vertical zones, built on or after 1 July 2010.</li>
     </ul>
   </div>
 </div>
@@ -194,30 +189,5 @@ flowchart TD
 </div>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: 'base',
-    themeVariables: {
-      primaryColor: '#081a2d',
-      primaryBorderColor: '#00d4ff',
-      primaryTextColor: '#e8f4f8',
-      secondaryColor: '#0a1e30',
-      tertiaryColor: '#061525',
-      lineColor: '#00d4ff',
-      fontSize: '12px',
-      fontFamily: 'Inter, sans-serif'
-    },
-    flowchart: {
-      htmlLabels: true,
-      curve: 'basis',
-      nodeSpacing: 25,
-      rankSpacing: 55,
-      useMaxWidth: true
-    }
-  });
-</script>
 </body>
 </html>
